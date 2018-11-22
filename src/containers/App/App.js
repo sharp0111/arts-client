@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Make sure it works</h1>
+        <div className="test-css container primary" />
       </div>
     );
   }
