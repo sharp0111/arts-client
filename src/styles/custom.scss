@@ -16,18 +16,19 @@ $colors: (
     "gray-dark":  #0F1617
   );
 
+
   $theme-colors:(
-    "primary":    $primary,
-    "secondary":  $secondary,
+    "primary":    #141D1F,
+    "secondary":  #A1ABB5,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,
     "danger":     $danger,
     "light":      #E3EBED,
-    "dark":       $dark
+    "dark":       #0F1617
   );
 
   .test-css{
       height: 200px;
-      background-color: color("purple");
+      background-color: theme-color("secondary");
   }
