@@ -1,3 +1,33 @@
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$colors: (
+    "blue":       #4190ce,
+    "indigo":     $indigo,
+    "purple":     #bb3cea,
+    "pink":       $pink,
+    "red":        #ef694d,
+    "orange":     #fcba4a,
+    "yellow":     #f3e762,
+    "green":      #85d66b,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  #0F1617
+  );
+
+  $theme-colors:(
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      #E3EBED,
+    "dark":       $dark
+  );
+
+  .test-css{
+      height: 200px;
+      background-color: color("purple");
+  }
