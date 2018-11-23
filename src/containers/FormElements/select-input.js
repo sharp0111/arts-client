@@ -1,42 +1,70 @@
 import React from 'react';
-import './input.css';
+import PropTypes from 'prop-types';
+import Select from 'react-select';
 
-export default class Input extends React.Component {
-    componentDidUpdate(prevProps){
-        if (!prevProps.meta.active && this.props.meta.active){
-            this.input.focus();
-        }
+SelectInput.defaultProps = {
+    multi: false,
+    className: 'select-input',
+}
+
+SelectInput.propTypes = {
+    input: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onFocus: PropTypes.func.isRequired,
+    }).isRequired,
+    options: PropTypes.array.isRequired,
+    multi: PropTypes.bool,
+    className: PropTypes.string,
+};
+
+
+export default function SelectInput({input, options, multi, className}){
+
+    const {name, value, onBlur, onChange, onFocus} = input;
+    const transformedValue = transformValue(value, options, multi);
+
+    return(
+        <Select
+            valueKey='value'
+            name={name}
+            value={transformedValue}
+            multi={multi}
+            options={options}
+            onChange={multi
+                ?multiChangeHandler(onChange)
+                : singleChangeHandler(onChange)
+            }
+            onBlur={() => onBlur(value)}
+            onFocus={onFocus}
+            className={className}
+        />
+    );
+}
+
+
+function multiChangeHandler(e){
+    return function handleMultiHandler(values) {
+        e(values.map(value => value.value));
+    };
+}
+
+function singleChangeHandler(e){
+    return function handleSingleChange(value){
+        e(value);
     }
-    render(){
-        let error;
-        if (this.props.meta.touched && this.props.meta.error){
-            error = <div className="form-error">{this.props.meta.error}</div>
-        };
+}
 
-        let warning;
-        if (this.props.meta.touched && this.props.meta.warning){
-            warning = <div className="form-warning">{this.props.meta.warning}</div>
-        };
+function transformValue(value, options, multi){
+    if (multi && typeof value === 'string') return [];
 
+    const filteredOptions = options.filter(option => {
+        return multi
+            ? value.indexOf(option.value) !== -1
+            : option.value === value;
+    });
 
-        return (
-            <div className="form-input">
-                <label htmlFor={this.props.input.name}>
-                {this.props.label}
-                    {error}
-                    {warning}
-                </label>
-                <input
-                    {...this.props.input}
-                    id={this.props.input.name}
-                    type={this.props.type}
-                    ref={input => (this.input = input)}
-                    step={this.props.step}
-                    placeholder={this.props.placeholder}
-                    min={0}
-                    max={this.props.max}
-                />
-            </div>
-        );
-    }
+    return multi ? filteredOptions: filteredOptions[0];
 }
