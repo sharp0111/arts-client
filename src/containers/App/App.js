@@ -12,10 +12,10 @@ import Footer from '../Footer/footer';
 class App extends React.Component {
   render() {
     return (
-      <div className="App container-fluid">
+      <div className="App">
           <Navbar />
           <main role="main">
-            <Switch>
+          <Switch>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' component={SearchPage} />
               <Route exact path='/resource' component={ResourcePage} />

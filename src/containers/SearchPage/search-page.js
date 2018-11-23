@@ -5,7 +5,7 @@ export default class SearchPage extends React.Component{
 
         return(
             <div className="container search-page">
-
+                <p>Search Page</p>
             </div>
         )
     }

@@ -5,7 +5,7 @@ export default class ResourcePage extends React.Component{
 
         return(
             <div className="container resource-page">
-
+                <p> Resource Page</p>
             </div>
         )
     }

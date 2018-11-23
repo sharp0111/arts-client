@@ -5,7 +5,7 @@ export default class ProfilePage extends React.Component{
 
         return(
             <div className="container profile-page">
-
+                <p>Profile Page</p>
             </div>
         )
     }
