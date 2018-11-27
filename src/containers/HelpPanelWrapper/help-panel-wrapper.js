@@ -11,7 +11,7 @@ const helpText = {
 
 export default class HelpPanelWrapper extends React.Component{
     render(){
-        console.log(this.props.step)
+
         let text;
         switch(this.props.step){
             case 'basic':
@@ -20,7 +20,7 @@ export default class HelpPanelWrapper extends React.Component{
             case 'description':
                 text = helpText.description;
                 break;
-            case 'locaton':
+            case 'location':
                 text = helpText.location;
                 break;
             case 'images':
@@ -28,6 +28,9 @@ export default class HelpPanelWrapper extends React.Component{
                 break;
             case 'summary':
                 text = helpText.summary;
+                break;
+            default:
+                text = 'something went wront'
                 break;
         }
 
