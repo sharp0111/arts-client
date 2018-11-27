@@ -1,11 +1,14 @@
 import React from 'react';
 import HelpPanelWrapper from '../../containers/HelpPanelWrapper/help-panel-wrapper';
 import FormNavigation from '../../containers/FormNavigation/form-navigation';
+import ProgressBar from '../../containers/ProgressBar/progress-bar';
 
 export default function AddResource(props){
     return(
         <div className="add-resource">
-            <div className="progress-bar-wrapper row"></div>
+            <div className="progress-bar-wrapper row">
+                <ProgressBar {...props}/>
+            </div>
             <div className="add-resource-container row">
                 <div className="col-md-6">
                     <div className="resource-form-wrapper">
@@ -13,11 +16,7 @@ export default function AddResource(props){
                     </div>
                     <div>
                         <div className="form-navigation">
-                            <FormNavigation
-                                step={props.step} 
-                                back={props.back}
-                                next={props.next}
-                            />
+                            <FormNavigation {...props} />
                         </div>
                     </div>
                 </div>

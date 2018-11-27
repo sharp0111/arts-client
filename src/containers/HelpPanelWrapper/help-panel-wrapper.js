@@ -1,5 +1,6 @@
 import React from 'react';
 import HelpPanel from '../../components/HelpPanel/help-panel';
+import './help-panel-wrapper.css';
 
 const helpText = {
     basic: "Plurality transgressive observe patriarchy digital popular culture intersects universal represents. Sexual identity Marx performative act tension existence media reposition found object. Gentrification personal observation transgress boundaries boundaries psychedelic materialism installation anti-hero ethnography.",
@@ -35,7 +36,7 @@ export default class HelpPanelWrapper extends React.Component{
         }
 
         return(
-            <div className="help-panel">
+            <div className="help-panel-wrapper">
                 <HelpPanel 
                     text={text}
                 />

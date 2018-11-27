@@ -48,6 +48,8 @@ export class AddResourceWrapper extends React.Component{
                     step={this.state.current}
                     back={this.handleBack}
                     next={this.handleNext}
+                    index={this.state.index}
+                    length={formSteps.length}
                 />
             </div>
         )

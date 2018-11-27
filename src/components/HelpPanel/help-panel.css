@@ -1,0 +1,9 @@
+.help-panel{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.help-panel-icon{
+    margin-bottom: 30px;
+}
