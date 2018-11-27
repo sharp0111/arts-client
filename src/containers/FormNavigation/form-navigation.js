@@ -7,28 +7,32 @@ export default class FormNavigation extends React.Component{
         if(this.props.step === 'basic'){
             console.log('basic')
             return(
-                <Button 
-                onClick={this.props.next}
-                type='button'
-                className='form-next'
-                label='Next'
-            /> 
+                <div className='row form-navigation-buttons'>
+                    <Button 
+                        onClick={this.props.next}
+                        type='button'
+                        className='form-next'
+                        label='Next'
+                    /> 
+                </div>
             )
         }
         if(this.props.step === 'summary'){
             console.log('summary')
             return(
-                <Button
-                onClick={this.props.back}
-                type='button'
-                className='form-back'
-                label="Back"
-            />
+                <div className='row form-navigation-buttons'>
+                    <Button
+                        onClick={this.props.back}
+                        type='button'
+                        className='form-back'
+                        label="Back"
+                    />
+                </div>
             )
         }
 
         return(
-            <div className='row'>
+            <div className='row form-navigation-buttons'>
                 <Button
                     onClick={this.props.back}
                     type='button'

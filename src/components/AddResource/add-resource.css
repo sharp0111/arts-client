@@ -1,0 +1,25 @@
+.resource-form-container{
+    position: relative;
+}
+
+.form-navigation{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    right: 0;
+}
+
+.form-navigation-buttons{
+    position: relative;
+    margin: 30px;
+}
+
+.form-back{
+    position: absolute;
+    left: 0;
+}
+
+.form-next{
+    position: absolute;
+    right: 0;
+}
