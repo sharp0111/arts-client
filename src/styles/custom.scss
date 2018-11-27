@@ -28,12 +28,13 @@ $colors: (
     "dark":       #0F1617
   );
 
-
-
-  .row{
-    min-height: 200px;
-  }
-
   .navbar{
     margin-bottom: 20px;
+  }
+
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }

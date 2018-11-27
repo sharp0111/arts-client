@@ -1,4 +1,5 @@
 import React from 'react';
+import HelpPanelWrapper from '../../containers/HelpPanelWrapper/help-panel-wrapper';
 
 export default function AddResource(props){
     return(
@@ -9,6 +10,9 @@ export default function AddResource(props){
                     <h2>{props.step}</h2>
                 </div>
                 <div className="help-panel-wrapper col-md-6">
+                    <HelpPanelWrapper 
+                        step={props.step}
+                    />
                 </div>
             </div>
         </div>
