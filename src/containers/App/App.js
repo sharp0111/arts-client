@@ -16,10 +16,10 @@ class App extends React.Component {
           <Navbar />
           <main role="main">
           <Switch>
-              <Route exact path='/' component={LandingPage} />
-              <Route exact path='/search' component={SearchPage} />
-              <Route exact path='/resource' component={ResourcePage} />
-              <Route exact path='/profile' component={ProfilePage} />
+              <Route path='/home' component={LandingPage} />
+              <Route path='/search' component={SearchPage} />
+              <Route path='/resource' component={ResourcePage} />
+              <Route path='/profile' component={ProfilePage} />
               <Route path='/form' component={FormPage} />
             </Switch>
           </main>
