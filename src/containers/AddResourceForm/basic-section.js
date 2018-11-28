@@ -10,7 +10,7 @@ export default class extends React.Component{
     render(){
         if(this.props.step === 'basic'){
         return(
-            <div className="basic-information">
+            <div className='basic-information form-section'>
                 <Field 
                     component={Input}
                     type='text'

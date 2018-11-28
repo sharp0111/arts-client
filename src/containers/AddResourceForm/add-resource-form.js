@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormSection, reduxForm} from 'redux-form'
 import BasicSection from './basic-section';
-
+import DescriptionSection from './description-section';
 
 export class AddResourceForm extends React.Component{
 
@@ -20,6 +20,11 @@ export class AddResourceForm extends React.Component{
                     <BasicSection 
                         step={this.props.step}
                     />
+                </FormSection>
+                <FormSection name='description-section'>
+                    <DescriptionSection 
+                        step={this.props.step}
+                     />
                 </FormSection>
             </form>
         )

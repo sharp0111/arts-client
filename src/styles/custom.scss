@@ -42,3 +42,8 @@ $colors: (
   .add-resource-container{
     height: 50vh;
   }
+
+  .form-section{
+    display: flex;
+    flex-direction: column;
+  }
