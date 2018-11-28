@@ -1,5 +1,6 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form'
+import {FormSection, reduxForm} from 'redux-form'
+import BasicSection from './basic-section';
 
 
 export class AddResourceForm extends React.Component{
@@ -9,15 +10,20 @@ export class AddResourceForm extends React.Component{
     }
 
     render(){
+        console.log(this.props.step)
         return(
             <form
                 className='add-resource-form'
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
             >
-            <p>Form</p>
+                <FormSection name='basic-section'>
+                    <BasicSection 
+                        step={this.props.step}
+                    />
+                </FormSection>
             </form>
         )
     }
 }
 
-export default reduxForm('add-resource-form')(AddResourceForm);
+export default reduxForm({form: 'add-resource-form'})(AddResourceForm);

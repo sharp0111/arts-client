@@ -2,7 +2,7 @@ import React from 'react';
 import AddResource from '../../components/AddResource/add-resource';
 import {connect} from 'react-redux';
 
-const formSteps = ['basic', 'description', 'location', 'images', 'summary']
+const formSteps = ['basic', 'description', 'price', 'images', 'location']
 
 export class AddResourceWrapper extends React.Component{
     constructor(){

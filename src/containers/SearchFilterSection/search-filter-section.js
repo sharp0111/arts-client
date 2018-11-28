@@ -16,14 +16,10 @@ const type = [
     {value: 'gear', label: 'Gear'}
 ]
 
-export class SearchFilterForm extends React.Component {
+export default class CategoryTypeSection extends React.Component {
     render(){
         return(
             <div className='filter-form'>
-                <h4>Filter Results</h4>
-                <form
-                    className='search-filter-form'
-                >
                     <label>Category</label>
                     <Field
                         component={SelectInput}
@@ -40,10 +36,8 @@ export class SearchFilterForm extends React.Component {
                         name='type'
                         options={type}
                     />
-                </form>
             </div>
         )
     }
 }
 
-export default reduxForm({form: 'search-filter-form'})(SearchFilterForm);

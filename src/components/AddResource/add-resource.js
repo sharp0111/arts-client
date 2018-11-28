@@ -16,7 +16,9 @@ export default function AddResource(props){
                 <div className="col-md-6 resource-form-container">
                     <div className="resource-form-wrapper">
                         <h2>{props.step}</h2>
-                        <AddResourceForm />
+                        <AddResourceForm 
+                            {...props}
+                        />
                     </div>
                     <div className="form-navigation">
                         <FormNavigation {...props} />
