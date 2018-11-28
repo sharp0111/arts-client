@@ -19,7 +19,7 @@ $colors: (
 
   $theme-colors:(
     "primary":    #141D1F,
-    "secondary":  #A1ABB5,
+    "secondary":  #4190ce,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,
@@ -28,15 +28,17 @@ $colors: (
     "dark":       #0F1617
   );
 
-  .test-css{
-      height: 200px;
-      background-color: theme-color("secondary");
-  }
-
-  .row{
-    min-height: 200px;
-  }
-
   .navbar{
     margin-bottom: 20px;
+  }
+
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .add-resource-container{
+    height: 50vh;
   }
