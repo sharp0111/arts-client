@@ -15,11 +15,11 @@ const DescriptionSection = props => {
                 name='description'
                 validate={[required, nonEmpty]}
             />
-            <div>
-                <button type='button' className='previous' onClick={previousPage}>
+            <div className='row form-navigation-buttons'>
+                <button type='button' className='form-back' onClick={previousPage}>
                     Back
                 </button>
-                <button type='submit' className='next'>
+                <button type='submit' className='form-next'>
                     Next
                 </button>
             </div>

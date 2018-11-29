@@ -4,5 +4,5 @@ import {reducer as reduxFormReducer} from 'redux-form';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    reduxFormReducer,
+    form: reduxFormReducer,
 })

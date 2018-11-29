@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BasicSection from './basic-section';
 import DescriptionSection from './description-section';
+import PriceSection from './price-section';
 
 class AddResourceForm extends React.Component{
     constructor(props) {
@@ -26,10 +27,14 @@ class AddResourceForm extends React.Component{
         const {page} = this.state;
         return(
             <div>
-                {page === 1 && <BasicSection onSubmit={this.nextPage} />}
-                {page === 2 && <DescriptionSection 
-                    previousPage={this.previousPage}
-                    onSubmit={this.nextPage} />
+                {this.props.index === 0 && <BasicSection onSubmit={this.props.next} />}
+                {this.props.index === 1 && <DescriptionSection 
+                    previousPage={this.props.back}
+                    onSubmit={this.props.next} />
+                }
+                {this.props.index === 2 && <PriceSection 
+                    previousPage={this.props.back}
+                    onSubmit={this.props.next} />
                 }
             </div>
         )

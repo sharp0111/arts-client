@@ -19,8 +19,8 @@ const BasicSection = props => {
             <FormSection name='category-type'>
                 <SearchFilterSection />
             </FormSection>
-            <div>
-                <button type='submit' className='next'>Next</button>
+            <div className='row form-navigation-buttons'>
+                <button type='submit' className='form-next'>Next</button>
             </div>
         </form>
     )

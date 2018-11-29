@@ -1,6 +1,6 @@
 import React from 'react';
 import SelectInput from '../FormElements/select-input';
-import {Field, reduxForm} from 'redux-form';
+import {Field} from 'redux-form';
 
 const category = [
     {value: 'per', label: 'Performing Arts'},

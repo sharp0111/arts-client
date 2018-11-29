@@ -11,7 +11,8 @@
 
 .form-navigation-buttons{
     position: relative;
-    margin: 30px;
+    margin: 30px 5px;
+    
 }
 
 .form-back{
