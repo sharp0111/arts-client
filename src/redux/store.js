@@ -20,7 +20,7 @@ const persistedReducer = persistReducer(persistConfig, createRootReducer)
 export default (initialState = {}, history) => {
     const middlewares = [
         thunk,
-        //middleware,
+        middleware,
         routerMiddleware(history),
     ];
 

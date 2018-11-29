@@ -31,7 +31,7 @@ export default class HelpPanelWrapper extends React.Component{
                 text = helpText.summary;
                 break;
             default:
-                text = 'something went wront'
+                text = 'needs description'
                 break;
         }
 

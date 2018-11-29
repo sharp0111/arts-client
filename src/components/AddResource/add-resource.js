@@ -10,7 +10,10 @@ export default function AddResource(props){
         <div className="add-resource">
             <h2>Add Resource</h2>
             <div className="progress-bar-wrapper row">
-                <ProgressBar {...props}/>
+                <ProgressBar 
+                    inner={props.index}
+                    outer={props.length-1}
+                />
             </div>
             <div className="add-resource-container row">
                 <div className="col-md-6 resource-form-container">

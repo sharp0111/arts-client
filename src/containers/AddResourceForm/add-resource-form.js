@@ -1,34 +1,43 @@
 import React from 'react';
-import {FormSection, reduxForm} from 'redux-form'
+import PropTypes from 'prop-types';
 import BasicSection from './basic-section';
 import DescriptionSection from './description-section';
 
-export class AddResourceForm extends React.Component{
-
-    onSubmit(values){
-        console.log(values);
-    }
+class AddResourceForm extends React.Component{
+    constructor(props) {
+        super(props);
+        this.nextPage = this.nextPage.bind(this);
+        this.previousPage = this.previousPage.bind(this);
+        this.state = {
+          page: 1,
+        };
+      }
+      nextPage() {
+        this.setState({ page: this.state.page + 1 });
+      }
+    
+      previousPage() {
+        this.setState({ page: this.state.page - 1 });
+      }
 
     render(){
         console.log(this.props.step)
+        const {onSubmit} = this.props;
+        const {page} = this.state;
         return(
-            <form
-                className='add-resource-form'
-                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-            >
-                <FormSection name='basic-section'>
-                    <BasicSection 
-                        step={this.props.step}
-                    />
-                </FormSection>
-                <FormSection name='description-section'>
-                    <DescriptionSection 
-                        step={this.props.step}
-                     />
-                </FormSection>
-            </form>
+            <div>
+                {page === 1 && <BasicSection onSubmit={this.nextPage} />}
+                {page === 2 && <DescriptionSection 
+                    previousPage={this.previousPage}
+                    onSubmit={this.nextPage} />
+                }
+            </div>
         )
     }
 }
 
-export default reduxForm({form: 'add-resource-form'})(AddResourceForm);
+AddResourceForm.propsType = {
+    onSubmit: PropTypes.func.isRequired,
+};
+
+export default AddResourceForm;

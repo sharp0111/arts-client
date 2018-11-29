@@ -3,9 +3,7 @@ import Button from '../FormElements/button';
 
 export default class FormNavigation extends React.Component{
     render(){
-        console.log(this.props.step)
         if(this.props.step === 'basic'){
-            console.log('basic')
             return(
                 <div className='row form-navigation-buttons'>
                     <Button 

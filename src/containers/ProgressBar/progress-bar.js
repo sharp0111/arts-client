@@ -3,10 +3,7 @@ import './progress-bar.css';
 
 export default function ProgressBar(props){
 
-    let percentage = Math.floor(props.index/(props.length-1)*100)
-    console.log(props.index);
-    console.log(props.length);
-    console.log(percentage)
+    let percentage = Math.floor(props.inner/(props.outer)*100)
     return(
         <div className='progress'>
             <Filler percentage={percentage} />
