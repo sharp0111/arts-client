@@ -12,21 +12,18 @@ const PriceSection = props => {
                 type='number'
                 label='Rate'
                 name='rate'
-                validate={[required, nonEmpty]}
             />
             <Field 
                 component={Input}
                 type='text'
                 label='Enter Unit'
                 name='unti'
-                validate={[required, nonEmpty]}
             />
             <Field 
                 component={Input}
                 type='textarea'
                 label='Additional'
                 name='additional'
-                validate={[required, nonEmpty]}
             />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>

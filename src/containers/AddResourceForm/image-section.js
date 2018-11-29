@@ -4,15 +4,16 @@ import {Field, reduxForm} from 'redux-form';
 import {required, nonEmpty} from '../../validators';
 
 
-const DescriptionSection = props => {
+const ImageSection = props => {
     const {handleSubmit, previousPage} = props;
     return (
         <form onSubmit={handleSubmit}>
+            <p>placeholder</p>
             <Field 
                 component={Input}
                 type='textarea'
-                label='Give a brief description'
-                name='description'
+                label='Add image url'
+                name='image'
             />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>
@@ -30,5 +31,4 @@ export default reduxForm({
     form: 'add-resource-form',
     destroyOnUnmount: false, 
     forceUnregisterOnUnmount: true, 
-  })(DescriptionSection);
-  
+  })(ImageSection);

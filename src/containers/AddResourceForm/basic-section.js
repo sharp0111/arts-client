@@ -14,7 +14,6 @@ const BasicSection = props => {
                 type="text"
                 name="name"
                 label="Name of Resource"
-                validate={[required, nonEmpty]}
             />
             <FormSection name='category-type'>
                 <SearchFilterSection />

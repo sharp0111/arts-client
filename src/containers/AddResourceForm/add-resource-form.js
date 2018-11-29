@@ -3,28 +3,24 @@ import PropTypes from 'prop-types';
 import BasicSection from './basic-section';
 import DescriptionSection from './description-section';
 import PriceSection from './price-section';
+import ImageSection from './image-section';
+import LocationSection from './location-section';
 
 class AddResourceForm extends React.Component{
     constructor(props) {
         super(props);
-        this.nextPage = this.nextPage.bind(this);
-        this.previousPage = this.previousPage.bind(this);
         this.state = {
           page: 1,
         };
       }
-      nextPage() {
-        this.setState({ page: this.state.page + 1 });
-      }
-    
-      previousPage() {
-        this.setState({ page: this.state.page - 1 });
-      }
+
+    handleSubmit = (values) => {
+        console.log(values);
+    }
 
     render(){
         console.log(this.props.step)
         const {onSubmit} = this.props;
-        const {page} = this.state;
         return(
             <div>
                 {this.props.index === 0 && <BasicSection onSubmit={this.props.next} />}
@@ -35,6 +31,14 @@ class AddResourceForm extends React.Component{
                 {this.props.index === 2 && <PriceSection 
                     previousPage={this.props.back}
                     onSubmit={this.props.next} />
+                }
+                {this.props.index === 3 && <ImageSection 
+                    previousPage={this.props.back}
+                    onSubmit={this.props.next} />
+                }
+                {this.props.index === 4 && <LocationSection 
+                    previousPage={this.props.back}
+                    onSubmit={this.handleSubmit} />
                 }
             </div>
         )
