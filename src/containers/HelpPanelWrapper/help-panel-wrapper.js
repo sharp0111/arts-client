@@ -10,6 +10,7 @@ const helpText = {
     location: 'Where is it located? Exact location not availalbe until after confirmation',
     images: 'Upload images, must be a 4X3 ratio',
     price: 'Give a rate per unit, such as $50/hr, which will be displayed in search results',
+    availability: 'When are the general times this is available on a weekly basis?'
 
 }
 

@@ -8,7 +8,7 @@ import './add-resource.css';
 export default function AddResource(props){
     return(
         <div className="add-resource">
-            <h2>Add Resource</h2>
+            <h3>{props.step}</h3>
             <div className="progress-bar-wrapper row">
                 <ProgressBar 
                     inner={props.index}

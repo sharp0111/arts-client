@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import BasicSection from './basic-section';
 import DescriptionSection from './description-section';
 import PriceSection from './price-section';
+import AvailabilitySection from './availability-section';
 import ImageSection from './image-section';
 import LocationSection from './location-section';
 
@@ -32,11 +33,15 @@ class AddResourceForm extends React.Component{
                     previousPage={this.props.back}
                     onSubmit={this.props.next} />
                 }
-                {this.props.index === 3 && <ImageSection 
+                {this.props.index === 3 && <AvailabilitySection 
                     previousPage={this.props.back}
                     onSubmit={this.props.next} />
                 }
-                {this.props.index === 4 && <LocationSection 
+                {this.props.index === 4 && <ImageSection 
+                    previousPage={this.props.back}
+                    onSubmit={this.props.next} />
+                }
+                {this.props.index === 5 && <LocationSection 
                     previousPage={this.props.back}
                     onSubmit={this.handleSubmit} />
                 }
