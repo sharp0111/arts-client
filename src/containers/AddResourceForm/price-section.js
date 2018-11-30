@@ -2,23 +2,32 @@ import React from 'react';
 import Input from '../FormElements/input';
 import {Field, reduxForm} from 'redux-form';
 import {required, nonEmpty} from '../../validators';
+import './resource-form.css';
 
 const PriceSection = props => {
     const {handleSubmit, previousPage} = props;
     return(
         <form onSubmit={handleSubmit}>
-            <Field 
-                component={Input}
-                type='number'
-                label='Rate'
-                name='rate'
-            />
-            <Field 
-                component={Input}
-                type='text'
-                label='Enter Unit'
-                name='unti'
-            />
+            <div className='price-unit-section'>
+                <div className='rate'>
+                <Field 
+                    component={Input}
+                    type='number'
+                    label='Rate'
+                    name='rate'
+                    step={0.01}
+                    min={0}
+                />
+                </div>
+                <div className='unit' >
+                <Field 
+                    component={Input}
+                    type='text'
+                    label='Unit'
+                    name='unti'
+                />
+                </div>
+            </div>
             <Field 
                 component={Input}
                 type='textarea'
