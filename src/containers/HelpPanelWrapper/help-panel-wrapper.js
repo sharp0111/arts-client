@@ -1,45 +1,31 @@
 import React from 'react';
+import Media from 'react-media';
 import HelpPanel from '../../components/HelpPanel/help-panel';
+import HelpPanelOverlay from '../../components/HelpPanel/help-panel-overlay';
 import './help-panel-wrapper.css';
 
 const helpText = {
-    basic: "Plurality transgressive observe patriarchy digital popular culture intersects universal represents. Sexual identity Marx performative act tension existence media reposition found object. Gentrification personal observation transgress boundaries boundaries psychedelic materialism installation anti-hero ethnography.",
-    description: "Institutional pastiche gaze violence racial identity exploration political postmodern collective. New technologies performative Saatchi reclaiming cross-cultural surface evocative.",
-    location: "Street art subculture internet immaterial natural world vulnerable homogenized love hyperspace. Artifacts discord tension zine personal experience performance haunted profound body art. Natural Duchamp consumer politics cabinet of curiousities paradigm shift transcend multimedia erotica social justice.",
-    images: "Sexual identity real consumer politics conformity social justice sacred dialogue. Audience participation nothingness disenchantment Guerilla Girls expressive alternative viewpoint meta.",
-    summary: "Societal memory marginalized observers dogma pop art narrative. Gender martyr resist appropriate materiality artist's atudio meaning seeing. Represents form profound culture jamming material poetic navigate construct. Traditional model pop art non-conformist absurd transgress boundaries racial politics.",
+    basic: 'Name, select multiple categories, and type',
+    description: 'Give a more detailed description',
+    location: 'Where is it located? Exact location not availalbe until after confirmation',
+    images: 'Upload images, must be a 4X3 ratio',
+    price: 'Give a rate per unit, such as $50/hr, which will be displayed in search results',
+
 }
 
 export default class HelpPanelWrapper extends React.Component{
     render(){
 
-        let text;
-        switch(this.props.step){
-            case 'basic':
-                text = helpText.basic;
-                break;
-            case 'description':
-                text = helpText.description;
-                break;
-            case 'location':
-                text = helpText.location;
-                break;
-            case 'images':
-                text = helpText.images;
-                break;
-            case 'summary':
-                text = helpText.summary;
-                break;
-            default:
-                text = 'needs description'
-                break;
-        }
+        let text = helpText[this.props.step];
 
         return(
             <div className="help-panel-wrapper">
-                <HelpPanel 
-                    text={text}
-                />
+                <Media query='(max-width: 765px)'>
+                    {matches => 
+                        matches? (<HelpPanelOverlay />) : (
+                            <HelpPanel text={text}/>
+                        )}
+                </Media>
             </div>
         )
     }

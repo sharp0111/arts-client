@@ -6,7 +6,7 @@ export default function HelpPanel(props){
     return(
         <div className='help-panel'>
             <HelpPanelIcon />
-            {props.text}
+                {props.text}
         </div>
     )
 }
