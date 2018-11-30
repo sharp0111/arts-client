@@ -23,6 +23,7 @@
     flex: auto;
 }
 
+
 @media only screen and (max-width: 450px){
     .rate{
         margin-right: 0;

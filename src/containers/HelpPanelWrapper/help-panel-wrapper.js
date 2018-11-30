@@ -17,12 +17,13 @@ export default class HelpPanelWrapper extends React.Component{
     render(){
 
         let text = helpText[this.props.step];
+        let title = this.props.step
 
         return(
             <div className="help-panel-wrapper">
                 <Media query='(max-width: 765px)'>
                     {matches => 
-                        matches? (<HelpPanelOverlay />) : (
+                        matches? (<HelpPanelOverlay text={text} title={title}/>) : (
                             <HelpPanel text={text}/>
                         )}
                 </Media>

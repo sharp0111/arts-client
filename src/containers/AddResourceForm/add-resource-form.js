@@ -22,7 +22,7 @@ class AddResourceForm extends React.Component{
         console.log(this.props.step)
         const {onSubmit} = this.props;
         return(
-            <div>
+            <div className='add-resource-form-panel'>
                 {this.props.index === 0 && <BasicSection onSubmit={this.props.next} />}
                 {this.props.index === 1 && <DescriptionSection 
                     previousPage={this.props.back}
