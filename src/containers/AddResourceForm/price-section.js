@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../FormElements/input';
+import TextArea from '../FormElements/textarea';
 import {Field, reduxForm} from 'redux-form';
 import {required, nonEmpty} from '../../validators';
 import './resource-form.css';
@@ -29,10 +30,11 @@ const PriceSection = props => {
                 </div>
             </div>
             <Field 
-                component={Input}
+                component={TextArea}
                 type='textarea'
                 label='Additional'
                 name='additional'
+                rows={4}
             />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>

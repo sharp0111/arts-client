@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectInput from '../FormElements/select-input';
+import MultiSelect from '../FormElements/multi-select';
 import {Field} from 'redux-form';
 
 const category = [
@@ -22,12 +23,12 @@ export default class CategoryTypeSection extends React.Component {
             <div className='filter-form'>
                     <label>Category</label>
                     <Field
-                        component={SelectInput}
+                        component={MultiSelect}
                         type='text'
                         label='Category'
                         name='category'
                         options={category}
-                        isMulti={true}
+
                     />
                     <label>Type</label>
                     <Field  

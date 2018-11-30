@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import Select from 'react-select';
 
 SelectInput.defaultProps = {
@@ -7,7 +7,7 @@ SelectInput.defaultProps = {
     className: 'select-input',
 }
 
-SelectInput.propTypes = {
+/*SelectInput.propTypes = {
     input: PropTypes.shape({
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
@@ -18,7 +18,7 @@ SelectInput.propTypes = {
     options: PropTypes.array.isRequired,
     multi: PropTypes.bool,
     className: PropTypes.string,
-};
+};*/
 
 
 export default function SelectInput({input, options, multi, className}){
@@ -31,7 +31,7 @@ export default function SelectInput({input, options, multi, className}){
             valueKey='value'
             name={name}
             value={transformedValue}
-            multi={multi}
+            isMulti={multi}
             options={options}
             onChange={multi
                 ?multiChangeHandler(onChange)
@@ -47,7 +47,8 @@ export default function SelectInput({input, options, multi, className}){
 
 function multiChangeHandler(e){
     return function handleMultiHandler(values) {
-        e(values.map(value => value.value));
+        //e(values.map(value => value.value));
+        console.log(values)
     };
 }
 
