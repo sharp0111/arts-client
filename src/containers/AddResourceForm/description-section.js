@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../FormElements/input';
+import TextArea from '../FormElements/textarea';
 import {Field, reduxForm} from 'redux-form';
 import {required, nonEmpty} from '../../validators';
 
@@ -9,10 +10,11 @@ const DescriptionSection = props => {
     return (
         <form onSubmit={handleSubmit}>
             <Field 
-                component={Input}
+                component={TextArea}
                 type='textarea'
                 label='Give a brief description'
                 name='description'
+                rows={5}
             />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>

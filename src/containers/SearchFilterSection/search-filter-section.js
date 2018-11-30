@@ -27,6 +27,7 @@ export default class CategoryTypeSection extends React.Component {
                         label='Category'
                         name='category'
                         options={category}
+                        isMulti={true}
                     />
                     <label>Type</label>
                     <Field  

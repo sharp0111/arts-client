@@ -52,3 +52,7 @@ $colors: (
     text-align: left;
   }
 
+  .form-textarea{
+    display: flex;
+    flex-direction: column;
+  }
