@@ -5,7 +5,7 @@ export default class Navbar extends React.Component{
         return(
             <nav className='navbar navbar-expand-md bg-dark'>
                 <a className='navbar-brand' href=''>
-                    <img src={require("./logo-white.png")} width="150" height="50" alt="logo for arts connective" />
+                    <img src={require("./logo-white.png")} width="150" height="40" alt="logo for arts connective" />
                 </a>
             </nav>
         )
