@@ -6,14 +6,14 @@ import SearchPage from '../SearchPage/search-page';
 import ResourcePage from '../ResourcePage/resource-page';
 import ProfilePage from '../ProfilePage/profile-page';
 import FormPage from '../FormPage/form-page';
-import Navbar from '../Navbar/navbar';
+import Navigation from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-          <Navbar />
+          <Navigation />
           <main role="main">
           <Switch>
               <Route exact path='/' component={LandingPage} />
