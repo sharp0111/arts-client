@@ -3,7 +3,6 @@ import SearchFilterSection from '../SearchFilterSection/search-filter-section';
 import Input from '../FormElements/input';
 import {Field, FormSection, reduxForm} from 'redux-form';
 import {required, nonEmpty} from '../../validators';
-import AddResourceForm from './add-resource-form';
 
 const BasicSection = props => {
     const{handleSubmit} = props;

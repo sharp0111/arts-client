@@ -1,24 +1,38 @@
 import React from 'react';
 import Input from '../FormElements/input';
-import {Field, FormSection, reduxForm} from 'redux-form';
+import {Field,  reduxForm, Control} from 'redux-form';
+import Calendar from '../FormElements/calendar';
 import {required, nonEmpty} from '../../validators';
-import AddResourceForm from './add-resource-form';
 
-const AvilabilitySection = props => {
-    const{handleSubmit} = props;
-    return(
-        <form onSubmit = {handleSubmit}>
-            <Field 
-                component={Input}
-                type="text"
-                name="name"
-                label="Name of Resource"
-            />
+
+class AvilabilitySection extends React.Component {
+
+    logCalender = (value) => {
+        console.log(value);
+        console.log('sanity check');
+    }
+
+    render(){
+
+        return(
+            <form onSubmit = {this.props.onSubmit}>
+                <Field 
+                    component={Input}
+                    type="text"
+                    name="name"
+                    label="Availability"
+                />
             <div className='row form-navigation-buttons'>
-                <button type='submit' className='form-next'>Next</button>
+                <button type='button' className='form-back' onClick={this.props.previousPage}>
+                    Back
+                </button>
+                <button type='submit' className='form-next'>
+                    Next
+                </button>
             </div>
-        </form>
-    )
+            </form>
+        )
+    }
 }
 
 export default reduxForm({
