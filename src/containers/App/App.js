@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import LandingPage from '../LandingPage/landing-page';
 import SearchPage from '../SearchPage/search-page';
