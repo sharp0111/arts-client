@@ -14,7 +14,10 @@ export default class Navigation extends React.Component{
                 </Navbar.Brand>
                 <Nav>
                     <Search 
-                        placeholder='find things'
+                        placeholder='Search'
+                        key='navbar'
+                        form='navbar-search'
+                        formKey='navbar-search'
                     />
                 </Nav>
             </Navbar>

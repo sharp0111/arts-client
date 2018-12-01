@@ -13,6 +13,9 @@ export default function DisplayLandingPage(props){
                     <h4 className='header-text'>What do you need?</h4>
                     <Search 
                         placeholder='e.g. dance studio'
+                        key='landing'
+                        form='landing-search'
+                        formKey='landing-search'
                     />
                 </div>                
             </Jumbotron>
