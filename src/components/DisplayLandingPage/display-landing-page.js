@@ -1,5 +1,5 @@
 import React from 'react';
-import {Jumbotron, Row, Col, Grid, ResponsiveEmbed} from 'react-bootstrap';
+import {Jumbotron, Row, Col, Grid} from 'react-bootstrap';
 import YouTube from 'react-youtube';
 import Search from '../../containers/Search/search';
 import './landing-page.css';
@@ -47,8 +47,8 @@ export default function DisplayLandingPage(props){
                 </Row>
                 <h2>Browse By Category</h2>
                 <Row className='color-wheel-section'>
-                    <Col className='color-wheel' xs={0} md={6}>
-                        <div className='placeholder'></div>
+                    <Col className='color-wheel' xs={0} md={6}>    
+                        {props.colorWheel}
                     </Col>
                     <Col className='color-links' xs={12} md={6}>
                         <div className='placeholder'></div>

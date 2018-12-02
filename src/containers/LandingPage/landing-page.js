@@ -1,19 +1,27 @@
 import React from 'react';
 import DisplayLandingPage from '../../components/DisplayLandingPage/display-landing-page';
+import ColorWheel from '../../components/Color-Wheel/color-wheel';
+import Media from 'react-media';
 
 export default class LandingPage extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            color: 'full',
+        }
+    }
+
     render(){
-        const opts = {
-            height: '100%',
-            width: '100%',
-            playerVars: {
-                fs: 1,
-            }
-        };
+        let colorWheel = (
+            <Media query='(min-width: 765px)'>
+                {matches => matches? 
+                    (<ColorWheel color={this.state.color}/>): null}
+            </Media>
+        )
+
         return(
             <div className="container-fluid landing-page-wrapper">
-                <DisplayLandingPage 
-                    opts={opts}
+                <DisplayLandingPage colorWheel={colorWheel}
                 />
             </div>
         )
