@@ -11,6 +11,21 @@ export default class LandingPage extends React.Component{
         }
     }
 
+    //this worked better with display: none Let's fix that
+    handleOnHover = (e) => {
+        console.log(e.target.id)
+        const color = e.target.id;
+        this.setState({
+            color: color,
+        })
+    }
+
+    handleOnLeave = () => {
+        this.setState({
+            color: 'full'
+        })
+    }
+
     render(){
         let colorWheel = (
             <Media query='(min-width: 765px)'>
@@ -21,7 +36,11 @@ export default class LandingPage extends React.Component{
 
         return(
             <div className="container-fluid landing-page-wrapper">
-                <DisplayLandingPage colorWheel={colorWheel}
+                <DisplayLandingPage                
+                    colorWheel={colorWheel}
+                    listHover={this.handleOnHover}
+                    listLeave={this.handleOnLeave}
+                    colorimage={this.state.color}
                 />
             </div>
         )

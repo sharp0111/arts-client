@@ -37,10 +37,12 @@ const categories = [
 export default class ColorList extends React.Component{
     render(){
         const listItems = categories.map(category => 
-            <ColorListItem 
+            <ColorListItem
+                key={category.category} 
                 category={category.category}
                 name={category.name}
                 color={category.color}
+                {...this.props}
             />
         )
         return(

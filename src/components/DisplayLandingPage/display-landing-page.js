@@ -52,7 +52,9 @@ export default function DisplayLandingPage(props){
                         {props.colorWheel}
                     </Col>
                     <Col className='color-links' xs={12} md={4}>
-                        <ColorList />
+                        <ColorList 
+                            {... props}
+                        />
                     </Col>
                 </Row>
                 <h2>Feature Stories</h2>
