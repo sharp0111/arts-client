@@ -114,3 +114,42 @@ h1, h2{
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.color-wheel-list-item{
+    display: flex;
+    align-items: center;
+}
+
+.color-wheel-list-item a{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.color-wheel-list{
+    list-style-type: none;
+}
+
+.icon-red{
+    background-image: url('../../assets/red-slice.png');
+}
+
+.icon-orange{
+    background-image: url('../../assets/orange-slice.png');
+}
+
+.icon-yellow{
+    background-image: url('../../assets/yellow-slice.png');
+}
+
+.icon-green{
+    background-image: url('../../assets/green-slice.png');
+}
+
+.icon-blue{
+    background-image: url('../../assets/blue-slice.png');
+}
+
+.icon-purple{
+    background-image: url('../../assets/purple-slice.png');
+}
