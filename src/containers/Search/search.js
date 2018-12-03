@@ -10,8 +10,6 @@ export class Search extends React.Component{
     }
 
     render(){
-        const formId=`${this.props.location}-search`
-        const key=this.props.location
 
         return(
             <div className='search-box' >
@@ -24,9 +22,6 @@ export class Search extends React.Component{
                         type='text'
                         name='search'
                         placeholder={this.props.placeholder}
-                        key={key}
-                        formId={formId}
-                        formKey={key}
                     />
                 </form>
             </div>
