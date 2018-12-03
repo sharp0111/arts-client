@@ -4,14 +4,31 @@ export const FETCH_SEARCH_RESULTS_TRIGGERED = 'FETCH_SEARCH_RESULTS_TRIGGERED';
 export const FETCH_SEARCH_RESULTS_SUCCESS = 'FETCH_SEARCH_RESULTS_SUCCESS';
 export const FETCH_SEARCH_RESULTS_FAILURE = 'FETCH_SEARCH_RESULTS_FAILRE';
 
-export function getSearchResults(){
-    const promise = fetch(`${config.API_BASE_URL}/resources`, {
+export function fetchSearchResults(){
+    const promise = fetch(`${config.API_BASE_URL}/resource`, {
         method: 'GET',
         headers: {'Content-Type': 'applicaton/json'}
     });
     return {
         onRequest: FETCH_SEARCH_RESULTS_TRIGGERED,
         onSuccess: FETCH_SEARCH_RESULTS_SUCCESS,
+        onFailure: FETCH_SEARCH_RESULTS_FAILURE,
+        promise,
+    };
+}
+
+export const FETCH_CATEGORY_RESULTS_TRIGGERED = 'FETCH_CATEGORY_RESULTS_TRIGGERED';
+export const FETCH_CATEGORY_RESULTS_SUCCESS = 'FETCH_CATEGORY_RESULT_SUCCESS'
+export const FETCH_CATEGORY_RESULTS_FAILURE = 'FETCH_CATEGORY_RESULTS_FAILURE'
+
+export function fetchCategoryResults(category){
+    const promise = fetch(`${config.API_BASE_URL}/resource/category/${category}`, {
+        method: 'GET',
+        headers: {'Content-Type': 'applicaton/json'}
+    });
+    return {
+        onRequest: FETCH_CATEGORY_RESULTS_TRIGGERED,
+        onSuccess: FETCH_CATEGORY_RESULTS_SUCCESS,
         onFailure: FETCH_SEARCH_RESULTS_FAILURE,
         promise,
     };

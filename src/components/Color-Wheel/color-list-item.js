@@ -17,7 +17,9 @@ export default class ColorListItem extends React.Component{
                         onMouseLeave={this.props.listLeave}
                     >
                     </div>
-                    <Link to={`/search/category/${this.props.category}`}>{this.props.name}</Link>
+                    <Link 
+                        to={`/search/category/?category=${this.props.category}`}>{this.props.name}
+                    </Link>
                 </li>
             )
     }
