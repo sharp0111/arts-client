@@ -9,7 +9,6 @@ export class SearchResultsWrapper extends React.Component{
         console.log('sanity check')
         if(this.props.resources){
             console.log('render wrapper')
-            console.log(this.props.resources)
             let thumbnails = this.props.resources.map(item =>
                     <ResourceThumbnail
                         imageUrl={(item.images.length > 0) ? item.images[0]: null}

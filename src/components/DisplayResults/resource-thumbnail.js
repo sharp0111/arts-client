@@ -7,7 +7,7 @@ export default function ResourceThumbnail(props){
                 {props.imageUrl? (<img src={props.imageUrl}/>) : null}
             </div>
             <div className='thumbnail-info'>
-                <h3>{props.name}</h3>
+                <h5>{props.name}</h5>
                 <p>${props.value} / {props.unit}</p>
             </div>
         </div>

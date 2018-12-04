@@ -2,13 +2,23 @@
     min-height: 90vh;
 }
 
+.display-thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .thumbnail-image{
-    height: 150px;
-    width: 200px;
+    height: 200px;
+    width: 250px;
     border: solid 1px black;
 }
 
 .thumbnail-image img{
     height: 100%;
     width: 100%;
+}
+
+.resource-thumbnail{
+    margin: 20px;
+    flex-basis: 250px;
 }
