@@ -23,6 +23,23 @@
     flex: auto;
 }
 
+.day-schedule{
+    display: flex;
+    justify-content: space-between;
+}
+
+.day-title{
+    width: 180px;
+}
+
+.schedule-time .form-input{
+    display: flex;
+    flex-direction: row;
+}
+
+.schedule-time .form-input label{
+    margin-right: 10px;
+}
 
 @media only screen and (max-width: 450px){
     .rate{

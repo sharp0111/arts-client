@@ -1,38 +1,45 @@
 import React from 'react';
 import Input from '../FormElements/input';
-import {Field,  reduxForm, Control} from 'redux-form';
-import Calendar from '../FormElements/calendar';
+import {Field,  reduxForm, FormSection} from 'redux-form';
+import Hours from '../FormElements/hours';
 import {required, nonEmpty} from '../../validators';
 
 
-class AvilabilitySection extends React.Component {
-
-    logCalender = (value) => {
-        console.log(value);
-        console.log('sanity check');
-    }
-
-    render(){
-
-        return(
-            <form onSubmit = {this.props.onSubmit}>
-                <Field 
-                    component={Input}
-                    type="text"
-                    name="name"
-                    label="Availability"
-                />
+const AvilabilitySection = props => {
+    const{handleSubmit, previousPage} = props;
+    return(
+        <form onSubmit = {handleSubmit}>
+            <FormSection name="mon" label="Monday">
+                <Hours day="Monday"/>
+            </FormSection>
+            <FormSection name="tue" label="Tuesday">
+                <Hours day="Tuesday"/>
+            </FormSection>
+            <FormSection name="wed" label="Wednesday">
+                <Hours day="Wednesday"/>
+            </FormSection>
+            <FormSection name="thu" label="Thursday">
+                <Hours day="Thursday"/>
+            </FormSection>
+            <FormSection name="fri" label="Friday">
+                <Hours day="Friday"/>
+            </FormSection>
+            <FormSection name="sat" label="Saturday">
+                <Hours day="Saturday"/>
+            </FormSection>
+            <FormSection name="sun" label="Sunday">
+                <Hours day="Sunday"/>
+            </FormSection>
             <div className='row form-navigation-buttons'>
-                <button type='button' className='form-back' onClick={this.props.previousPage}>
+                <button type='button' className='form-back' onClick={previousPage}>
                     Back
                 </button>
                 <button type='submit' className='form-next'>
                     Next
                 </button>
             </div>
-            </form>
-        )
-    }
+        </form>
+    )
 }
 
 export default reduxForm({

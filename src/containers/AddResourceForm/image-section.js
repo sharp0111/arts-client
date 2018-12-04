@@ -8,12 +8,24 @@ const ImageSection = props => {
     const {handleSubmit, previousPage} = props;
     return (
         <form onSubmit={handleSubmit}>
-            <p>placeholder</p>
+            <p>Add images by URL</p>
             <Field 
                 component={Input}
                 type='textarea'
-                label='Add image url'
-                name='image'
+                label='Featured image'
+                name='image1'
+            />
+            <Field 
+                component={Input}
+                type='textarea'
+                label='additional image'
+                name='image2'
+            />
+           <Field 
+                component={Input}
+                type='textarea'
+                label='additional image'
+                name='image3'
             />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>

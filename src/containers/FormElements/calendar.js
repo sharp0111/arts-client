@@ -1,14 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import AvailableTimes from 'react-available-times';
 
-export default class Calendar extends React.Component{
+class Calendar extends React.Component{
      render(){
+
         return(
             <AvailableTimes 
-                recurring={this.props.recurring}
-                height={this.props.height}
-                onChange={this.props.logChange}
+
             />
-        )
+        );
     }
 }
+
+export default connect(s => s)(Calendar)
