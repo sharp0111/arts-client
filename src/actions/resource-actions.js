@@ -1,4 +1,5 @@
 import config from '../config';
+import {push} from 'connected-react-router';
 
 export const FETCH_SEARCH_RESULTS_TRIGGERED = 'FETCH_SEARCH_RESULTS_TRIGGERED';
 export const FETCH_SEARCH_RESULTS_SUCCESS = 'FETCH_SEARCH_RESULTS_SUCCESS';
@@ -48,8 +49,16 @@ export function createResource(data){
     });
     return{
         onRequest: CREATE_RESOURCE_REQUEST_TRIGGERED,
-        onSuccess: CREATE_RESOURCE_REQUEST_SUCCESS,
+        onSuccess: handleCreateResource,
         onFailure: CREATE_RESOURCE_REQUEST_FAILURE,
         promise,
     }
+}
+
+const handleCreateResource = (response, dispatch) =>{
+    dispatch({
+        type: CREATE_RESOURCE_REQUEST_SUCCESS,
+        response,
+    });
+    dispatch(push('/resource'))
 }

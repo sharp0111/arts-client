@@ -19,6 +19,13 @@ export default function resource(state=initialState, action){
                 thumbnails: action.response
             }
         }
+        case actionTypes.CREATE_RESOURCE_REQUEST_SUCCESS: {
+            console.log(action.response)
+            return{
+                ...state,
+                selection: action.response
+            }
+        }
         default: {
             return state;
         }

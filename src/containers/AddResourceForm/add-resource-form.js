@@ -6,7 +6,9 @@ import PriceSection from './price-section';
 import AvailabilitySection from './availability-section';
 import ImageSection from './image-section';
 import LocationSection from './location-section';
-import { type } from 'os';
+import {reduxForm} from 'redux-form';
+
+import {createResource} from '../../actions/index.actions';
 
 class AddResourceForm extends React.Component{
     constructor(props) {
@@ -20,7 +22,7 @@ class AddResourceForm extends React.Component{
         const {mon, tue, wed, thu, fri, sat, sun, image1, image2, image3, name,
             additional, city, category_type, state, street, unit, rate, description
         } = values;
-        let calendar = {
+        /*let calendar = {
             mon: {start: parseInt(mon.start), end: parseInt(mon.end)},
             tue: {start: parseInt(tue.start), end: parseInt(tue.end)},
             wed: {start: parseInt(wed.start), end: parseInt(wed.end)},
@@ -28,7 +30,7 @@ class AddResourceForm extends React.Component{
             fri: {start: parseInt(fri.start), end: parseInt(fri.end)},
             sat: {start: parseInt(sat.start), end: parseInt(sat.end)},
             sun: {start: parseInt(sun.start), end: parseInt(sun.end)},
-    }
+    }*/
         const category = [] 
         category_type.category.map(item => {
             category.push(item.value)
@@ -41,7 +43,6 @@ class AddResourceForm extends React.Component{
             price_value: value,
             price_unit: unit,
             price_description: additional,
-            calendar: calendar,
             description: description,
             type: type,
             name: name,
@@ -51,6 +52,7 @@ class AddResourceForm extends React.Component{
             state: state,
         }
         console.log(data)
+        return this.props.dispatch(createResource(data))
     }
 
     render(){
@@ -88,4 +90,4 @@ AddResourceForm.propsType = {
     onSubmit: PropTypes.func.isRequired,
 };
 
-export default AddResourceForm;
+export default reduxForm({form: 'add-resource-form'})(AddResourceForm);
