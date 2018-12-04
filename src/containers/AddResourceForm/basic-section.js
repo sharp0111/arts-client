@@ -14,7 +14,7 @@ const BasicSection = props => {
                 name="name"
                 label="Name of Resource"
             />
-            <FormSection name='category-type'>
+            <FormSection name='category_type'>
                 <SearchFilterSection />
             </FormSection>
             <div className='row form-navigation-buttons'>

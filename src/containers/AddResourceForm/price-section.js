@@ -25,7 +25,7 @@ const PriceSection = props => {
                     component={Input}
                     type='text'
                     label='Unit'
-                    name='unti'
+                    name='unit'
                 />
                 </div>
             </div>

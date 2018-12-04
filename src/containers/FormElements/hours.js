@@ -18,8 +18,8 @@ export default class Hours extends React.Component{
                             placeholder={6}
                             min={0}
                             max={23}
-                            name={`${this.props.day}-start`}
-                            id={`${this.props.day}-start`}
+                            name={`start`}
+                            id={`start`}
                         />
                </div>
                <div className='end-time schedule-time'>
@@ -31,8 +31,8 @@ export default class Hours extends React.Component{
                         placeholder={16}
                         min={1}
                         max={24}
-                        name={`${this.props.day}-end`}
-                        id={`${this.props.day}-end`}
+                        name={`end`}
+                        id={`end`}
                     />
                </div>
             </div>
