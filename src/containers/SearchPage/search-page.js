@@ -1,19 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import DisplayResults from '../../components/DisplayResults/display-results';
+import SearchResultsWrapper from '../SearchResultsWrapper/search-results-wrapper';
+import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 import {fetchSearchResults} from '../../actions/index.actions';
 import {fetchCategoryResults} from '../../actions/index.actions';
 
 export class SearchPage extends React.Component{
 
-    componentWillMount(){
+    componentDidMount(){
         let category = this.getQueryVariable('category')
         let search = this.getQueryVariable('search')
         const categories = ['per', 'mus', 'fin', 'dig', 'cra', 'fab']
         console.log(search)
         if(categories.includes(category)){
             console.log('found')
-            this.props.dispatch(fetchCategoryResults(category));
+            this.props.dispatch(fetchCategoryResults(category))
+        }
+        if(category===false && search===false){
+            this.props.dispatch(fetchSearchResults())
         }
     }
 
@@ -28,17 +32,26 @@ export class SearchPage extends React.Component{
     }
     render(){
         console.log('render search-page')
-
+        let thumbnails;
+        console.log(this.props.resources)
+        /*thumbnails = this.props.resources.thumbnails.map(item =>
+            <ResourceThumbnail 
+                image={item.images}
+                name={item.name}
+                value={item.value}
+                unit={item.unit}
+            />
+        )*/
         return(
             <div className="container search-page">
-                <DisplayResults />
+                <SearchResultsWrapper thumbnails={thumbnails}/>
             </div>
         )
     }
 }
 
 const mapStatetoProps = state => ({
-    resources: state.thumbnails
+    resources: state.resources.thumbnails
 });
  
 export default connect(mapStatetoProps)(SearchPage)

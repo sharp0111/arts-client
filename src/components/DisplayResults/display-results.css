@@ -1,0 +1,14 @@
+.display-results{
+    min-height: 90vh;
+}
+
+.thumbnail-image{
+    height: 150px;
+    width: 200px;
+    border: solid 1px black;
+}
+
+.thumbnail-image img{
+    height: 100%;
+    width: 100%;
+}
