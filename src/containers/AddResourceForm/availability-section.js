@@ -1,9 +1,9 @@
 import React from 'react';
-import Input from '../FormElements/input';
+//import Input from '../FormElements/input';
 import {Field,  reduxForm, FormSection} from 'redux-form';
 import TextArea from '../FormElements/textarea';
-import Hours from '../FormElements/hours';
-import {required, nonEmpty} from '../../validators';
+//import Hours from '../FormElements/hours';
+//import {required, nonEmpty} from '../../validators';
 
 
 const AvilabilitySection = props => {

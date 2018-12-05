@@ -1,14 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import DisplayResults from '../../components/DisplayResults/display-results';
 import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 
 export class SearchResultsWrapper extends React.Component{
 
     render(){
-        console.log('sanity check')
         if(this.props.resources){
-            console.log('render wrapper')
             let thumbnails = this.props.resources.map(item =>
                     <ResourceThumbnail
                         imageUrl={(item.images.length > 0) ? item.images[0]: null}
@@ -16,6 +15,7 @@ export class SearchResultsWrapper extends React.Component{
                         name={item.name}
                         value={(item.price_value/1000).toFixed([2])}
                         unit={item.price_unit}
+                        id={item._id}
                     />
                 )
             return(

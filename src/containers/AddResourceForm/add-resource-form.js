@@ -19,7 +19,7 @@ class AddResourceForm extends React.Component{
       }
 
     handleSubmit = (values) => {
-        const {mon, tue, wed, thu, fri, sat, sun, availabilty, image1, image2, image3, name,
+        const {availabilty, image1, image2, image3, name,
             additional, city, category_type, state, street, unit, rate, description
         } = values;
         /*let calendar = {
@@ -34,6 +34,7 @@ class AddResourceForm extends React.Component{
         const category = [] 
         category_type.category.map(item => {
             category.push(item.value)
+            return null;
         })
         let type = category_type.type.value
         let images = [image1, image2, image3]

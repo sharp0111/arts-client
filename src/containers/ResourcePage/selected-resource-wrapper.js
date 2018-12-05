@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
+import ResourceWrapper from './resource-wrapper'
 import DisplayResource from '../../components/DisplayResource/display-resource';
 
 export class SelectedResourceWrapper extends React.Component{
@@ -8,7 +8,7 @@ export class SelectedResourceWrapper extends React.Component{
         return(
             <div>
                 <p>Selected</p>
-                <DisplayResource />
+                <ResourceWrapper />
             </div>
         )
     }
