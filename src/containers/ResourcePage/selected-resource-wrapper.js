@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ResourceWrapper from './resource-wrapper'
-import DisplayResource from '../../components/DisplayResource/display-resource';
 
 import {fetchResource} from '../../actions/index.actions';
 
