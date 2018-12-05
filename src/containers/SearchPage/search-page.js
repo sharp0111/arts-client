@@ -33,7 +33,7 @@ export class SearchPage extends React.Component{
     render(){
         let thumbnails;
         return(
-            <div className="container search-page">
+            <div className="container-fluid search-page">
                 <SearchResultsWrapper thumbnails={thumbnails}/>
             </div>
         )

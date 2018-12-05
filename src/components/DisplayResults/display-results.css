@@ -5,8 +5,8 @@
 }
 
 .thumbnail-image{
-    height: 200px;
-    width: 250px;
+    height: 140px;
+    width: 200px;
     border: solid 1px black;
 }
 
@@ -17,5 +17,5 @@
 
 .resource-thumbnail{
     margin: 20px;
-    flex-basis: 250px;
+    width: 200px;
 }

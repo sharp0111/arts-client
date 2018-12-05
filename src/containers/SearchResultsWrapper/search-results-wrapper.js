@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import DisplayResults from '../../components/DisplayResults/display-results';
 import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
-
+import FilterResults from '../FilterResults/filter-results';
 export class SearchResultsWrapper extends React.Component{
   
     render(){
@@ -19,7 +19,14 @@ export class SearchResultsWrapper extends React.Component{
                     />
                 )
             return(
-                <DisplayResults thumbnails={thumbnails}/>
+                <div className='container display-results'>
+                    <div className='row'>
+                        <div className='results-filter-section col-md-3'>
+                            <FilterResults />
+                        </div>
+                        <DisplayResults thumbnails={thumbnails}/>
+                    </div>
+                </div>
             )
         }
         if(this.props.resources === 'null'){
