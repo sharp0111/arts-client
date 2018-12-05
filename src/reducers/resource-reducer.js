@@ -26,6 +26,13 @@ export default function resource(state=initialState, action){
                 selection: action.response
             }
         }
+        case actionTypes.FETCH_RESOURCE_SUCCESS: {
+            console.log(action.response)
+            return{
+                ...state,
+                selection: action.response
+            }
+        }
         default: {
             return state;
         }

@@ -35,6 +35,24 @@ export function fetchCategoryResults(category){
     };
 }
 
+export const FETCH_RESOURCE_TRIGGERED = 'FETCH_RESOURCE_TRIGGERED'
+export const FETCH_RESOURCE_SUCCESS = 'FETCH_RESOURCE_SUCCESS'
+export const FETCH_RESOURCE_FAILURE = 'FETCH_RESOURCE_FAILURE'
+
+export function fetchResource(id){
+    const promise = fetch(`${config.API_BASE_URL}/resource/${id}`, {
+        method: 'GET',
+        headers: {'Content-Type': 'applicaton/json'}
+    });
+    return {
+        onRequest: FETCH_RESOURCE_TRIGGERED,
+        onSuccess: FETCH_RESOURCE_SUCCESS,
+        onFailure: FETCH_RESOURCE_FAILURE,
+        promise,
+    };
+}
+
+
 export const CREATE_RESOURCE_REQUEST_TRIGGERED = 'CREATE_GOAL_REQUEST_TRIGGERED';
 export const CREATE_RESOURCE_REQUEST_SUCCESS = 'CREATE_RESOURCE_REQUEST_SUCCESS';
 export const CREATE_RESOURCE_REQUEST_FAILURE = 'CREATE_RESOURCE_REQUEST_FAILURE';

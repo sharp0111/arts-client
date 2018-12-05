@@ -5,7 +5,7 @@ import DisplayResults from '../../components/DisplayResults/display-results';
 import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 
 export class SearchResultsWrapper extends React.Component{
-
+  
     render(){
         if(this.props.resources){
             let thumbnails = this.props.resources.map(item =>
