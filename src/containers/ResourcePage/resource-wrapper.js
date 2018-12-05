@@ -8,9 +8,9 @@ export class ResourceWrapper extends React.Component{
         if(this.props.resource){
             return(
                 <div>
-                    <p>Created</p>
                     <DisplayResource 
                         name={this.props.resource.name}
+                        imageUrl={(this.props.resource.images.length > 0) ? this.props.resource.images[0]: null}
                         rate={this.props.resource.price_value}
                         unit={this.props.resource.unit}
                         additional={this.props.resource.addition}

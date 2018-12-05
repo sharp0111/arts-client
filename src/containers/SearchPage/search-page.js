@@ -29,6 +29,7 @@ export class SearchPage extends React.Component{
         }
         return (false);
     }
+    
     render(){
         let thumbnails;
         return(

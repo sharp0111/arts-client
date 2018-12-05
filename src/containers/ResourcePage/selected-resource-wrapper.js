@@ -27,7 +27,6 @@ export class SelectedResourceWrapper extends React.Component{
     render(){
         return(
             <div>
-                <p>Selected</p>
                 <ResourceWrapper />
             </div>
         )
