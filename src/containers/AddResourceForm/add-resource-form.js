@@ -19,7 +19,7 @@ class AddResourceForm extends React.Component{
       }
 
     handleSubmit = (values) => {
-        const {mon, tue, wed, thu, fri, sat, sun, image1, image2, image3, name,
+        const {mon, tue, wed, thu, fri, sat, sun, availabilty, image1, image2, image3, name,
             additional, city, category_type, state, street, unit, rate, description
         } = values;
         /*let calendar = {
@@ -43,6 +43,7 @@ class AddResourceForm extends React.Component{
             price_value: value,
             price_unit: unit,
             price_description: additional,
+            calendar: availabilty,
             description: description,
             type: type,
             name: name,

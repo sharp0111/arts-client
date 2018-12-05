@@ -60,5 +60,5 @@ const handleCreateResource = (response, dispatch) =>{
         type: CREATE_RESOURCE_REQUEST_SUCCESS,
         response,
     });
-    dispatch(push('/resource'))
+    dispatch(push('/resource/created'))
 }

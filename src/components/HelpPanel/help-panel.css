@@ -7,3 +7,12 @@
 .help-panel-icon{
     margin-bottom: 30px;
 }
+
+.info-button{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8JHSoUFaiz7xaCY07ggFVNnkFX02ryULRLOfOiEs_TqhLw4C');
+    height: 50px;
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

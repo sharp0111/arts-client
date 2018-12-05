@@ -7,7 +7,7 @@ export default function HelpPanelOverlay(props){
     return(
         <div>
             <OverlayTrigger trigger='click' overlay={<HelpPanelPopover {...props}/>} className='bottom'>
-                <button>Info</button>
+                <button className='info-button'></button>
             </OverlayTrigger>
         </div>
     )
