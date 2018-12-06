@@ -43,7 +43,7 @@ class AddResourceForm extends React.Component{
             category: category,
             price_value: value,
             price_unit: unit,
-            price_description: additional,
+            price_additional: additional,
             calendar: availabilty,
             description: description,
             type: type,

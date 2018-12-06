@@ -11,9 +11,9 @@ export class ResourceWrapper extends React.Component{
                     <DisplayResource 
                         name={this.props.resource.name}
                         imageUrl={(this.props.resource.images.length > 0) ? this.props.resource.images[0]: null}
-                        rate={this.props.resource.price_value}
-                        unit={this.props.resource.unit}
-                        additional={this.props.resource.addition}
+                        value={(this.props.resource.price_value/1000).toFixed([2])}
+                        unit={this.props.resource.price_unit}
+                        additional={this.props.resource.price_additional}
                         calendar={this.props.resource.calendar}
                         description={this.props.resource.description}
                         type={this.props.resource.type}
