@@ -16,6 +16,7 @@ export class SearchResultsWrapper extends React.Component{
                         value={(item.price_value/1000).toFixed([2])}
                         unit={item.price_unit}
                         id={item._id}
+                        category={item.category}
                     />
                 )
             return(
