@@ -23,11 +23,12 @@ export default class CategoryTypeSection extends React.Component {
             <div className='filter-form'>
                     <label>Category</label>
                     <Field
-                        component={MultiSelect}
+                        component={this.props.multi? MultiSelect: SelectInput}
                         type='text'
                         label='Category'
                         name='category'
                         options={category}
+                        onChange={this.props.handleCategory}
 
                     />
                     <label>Type</label>
@@ -37,6 +38,7 @@ export default class CategoryTypeSection extends React.Component {
                         label='Type'
                         name='type'
                         options={type}
+                        onChange={this.props.handleType}
                     />
             </div>
         )

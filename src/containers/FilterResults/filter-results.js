@@ -3,14 +3,22 @@ import SearchFilterSection from '../SearchFilterSection/search-filter-section';
 import {reduxForm, FormSection} from 'redux-form';
 
 class FilterResults extends React.Component{
-    handleSubmit = (values) => {
-        console.log(values)
+
+    handleCategory = (value) => {
+        console.log(value.value)
     }
+
+    handleType = (value) => {
+        console.log(value.value)
+    }
+
     render(){
         return(
             <div className='filter-results'>
             <FormSection name='filter-category-type'>
-                <SearchFilterSection />
+                <SearchFilterSection 
+                    {...this.props}
+                />
             </FormSection>
             </div>
         )
