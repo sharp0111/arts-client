@@ -15,7 +15,9 @@ const BasicSection = props => {
                 label="Name of Resource"
             />
             <FormSection name='category_type'>
-                <SearchFilterSection />
+                <SearchFilterSection 
+                    multi={true}
+                />
             </FormSection>
             <div className='row form-navigation-buttons'>
                 <button type='submit' className='form-next'>Next</button>

@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/index.actions';
 const initialState = {
     thumbnails: null,
     selection: null,
+    images: [],
 }
 
 export default function resource(state=initialState, action){
@@ -31,6 +32,13 @@ export default function resource(state=initialState, action){
             return{
                 ...state,
                 selection: action.response
+            }
+        }
+        case actionTypes.HANDLE_UPLOADED_IMAGE: {
+            console.log(action.image)
+            return{
+                ...state,
+                images: action.image
             }
         }
         default: {

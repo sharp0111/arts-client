@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from '../FormElements/input';
 import {Field, reduxForm} from 'redux-form';
+import ImageUploadWrapper from '../ImageUpload/image-upload-wrapper';
 import {required, nonEmpty} from '../../validators';
 
 
@@ -9,24 +10,7 @@ const ImageSection = props => {
     return (
         <form onSubmit={handleSubmit}>
             <p>Add images by URL</p>
-            <Field 
-                component={Input}
-                type='textarea'
-                label='Featured image'
-                name='image1'
-            />
-            <Field 
-                component={Input}
-                type='textarea'
-                label='additional image'
-                name='image2'
-            />
-           <Field 
-                component={Input}
-                type='textarea'
-                label='additional image'
-                name='image3'
-            />
+            <ImageUploadWrapper />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>
                     Back

@@ -80,3 +80,10 @@ const handleCreateResource = (response, dispatch) =>{
     });
     dispatch(push('/resource/created'))
 }
+
+export const HANDLE_UPLOADED_IMAGE = 'HANDLE_UPLOADED_IMAGE';
+
+export const handleUploadedImage = (image) => (console.log('action ran'),{
+    type: HANDLE_UPLOADED_IMAGE,
+    image,
+})

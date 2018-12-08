@@ -50,6 +50,7 @@ export class AddResourceWrapper extends React.Component{
                     next={this.handleNext}
                     index={this.state.index}
                     length={formSteps.length}
+                    images={this.props.images.length > 0? this.props.images: null}
                 />
             </div>
         )
@@ -57,7 +58,7 @@ export class AddResourceWrapper extends React.Component{
 }
 
 const mapStatetoProps = state => ({
-
+    images: state.resources.images
 })
 
 export default connect(mapStatetoProps)(AddResourceWrapper)
