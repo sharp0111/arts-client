@@ -81,3 +81,16 @@ $colors: (
   a{
     color: black;
   }
+
+  .navlink, a{
+    color: white;
+    margin-right: 20px;
+  }
+
+  .navlink, a:hover{
+    color: #f3e762;
+  }
+
+  .navbar-nav{
+    flex-direction: row;
+  }

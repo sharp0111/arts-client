@@ -41,6 +41,25 @@
     margin-right: 10px;
 }
 
+.resource-form-container{
+    height: 50vh;
+}
+
+.resource-form-wrapper{
+    height: 100%;
+}
+
+.add-resource-form-panel{
+    height: 100%;
+}
+
+.add-resource-form-panel form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width: 450px){
     .rate{
         margin-right: 0;

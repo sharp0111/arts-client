@@ -5,14 +5,25 @@
 }
 
 .help-panel-icon{
-    margin-bottom: 30px;
+    margin: 0 auto;
 }
 
 .info-button{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8JHSoUFaiz7xaCY07ggFVNnkFX02ryULRLOfOiEs_TqhLw4C');
-    height: 50px;
-    width: 50px;
+    background-image: url('../../assets/idea.png');
+    height: 75px;
+    width: 75px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background-color: white;
+}
+
+.overlay-trigger{
+    display: flex;
+    justify-content: center;
 }

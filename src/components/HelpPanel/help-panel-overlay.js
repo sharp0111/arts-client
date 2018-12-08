@@ -5,7 +5,7 @@ import {OverlayTrigger} from 'react-bootstrap';
 export default function HelpPanelOverlay(props){
     console.log(props.title)
     return(
-        <div>
+        <div className='overlay-trigger'>
             <OverlayTrigger trigger='click' overlay={<HelpPanelPopover {...props}/>} className='bottom'>
                 <button className='info-button'></button>
             </OverlayTrigger>

@@ -9,7 +9,6 @@ const ImageSection = props => {
     const {handleSubmit, previousPage} = props;
     return (
         <form onSubmit={handleSubmit}>
-            <p>Add images by URL</p>
             <ImageUploadWrapper />
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>

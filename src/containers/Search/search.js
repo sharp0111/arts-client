@@ -1,12 +1,14 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import Input from '../FormElements/input';
+import {push} from 'connected-react-router';
 
 export class Search extends React.Component{
 
     onSubmit(value){
         console.log('submit')
         console.log(value)
+        this.props.dispatch(push('/search'))
     }
 
     render(){
