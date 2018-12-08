@@ -8,17 +8,19 @@ const BasicSection = props => {
     const{handleSubmit} = props;
     return(
         <form onSubmit = {handleSubmit}>
-            <Field 
-                component={Input}
-                type="text"
-                name="name"
-                label="Name of Resource"
-            />
-            <FormSection name='category_type'>
-                <SearchFilterSection 
-                    multi={true}
+            <div className='fields'>
+                <Field 
+                    component={Input}
+                    type="text"
+                    name="name"
+                    label="Name of Resource"
                 />
-            </FormSection>
+                <FormSection name='category_type'>
+                    <SearchFilterSection 
+                        multi={true}
+                    />
+                </FormSection>
+            </div>
             <div className='row form-navigation-buttons'>
                 <button type='submit' className='form-next'>Next</button>
             </div>
