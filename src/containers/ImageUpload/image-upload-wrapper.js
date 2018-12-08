@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import RenderedImages from './rendered-images';
 import Button from '../FormElements/button';
 import {connect} from 'react-redux';
@@ -93,3 +94,13 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(ImageUploadWrapper)
+=======
+
+export default class ImageUploadWrapper extends React.Component{
+    render(){
+        return(
+            <div><h2>Image Wrapper</h2></div>
+        )
+    }
+}
+>>>>>>> e7225b0bfa4f004ee55800e9018131c45d80291e
