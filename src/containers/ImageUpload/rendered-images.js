@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image} from 'cloudinary-react';
+import {Image, CloudinaryContext} from 'cloudinary-react';
 
 
 export default class RenderedImages extends React.Component{
@@ -11,18 +11,18 @@ export default class RenderedImages extends React.Component{
         let newImages = this.props.images.map((image, i) => 
             <div key={i} className='uploaded-image'>
                 <Image 
-                    cloudName='arts-connective'
                     publicId={image.public_id}
-                    width='300'
-                    height='200'
+                    width='200'
+                    height='160'
+                    crop='fill'
                 />
             </div>
         )
         return(
-            <div>
+            <CloudinaryContext cloudName='arts-connective'>
                 <p>New Images</p>
                 {newImages}
-            </div>
+            </CloudinaryContext>
         )
         }
         return null;

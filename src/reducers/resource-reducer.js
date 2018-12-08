@@ -38,7 +38,7 @@ export default function resource(state=initialState, action){
             console.log(action.image)
             return{
                 ...state,
-                images: [...state.images, action.image]
+                images: action.image
             }
         }
         default: {

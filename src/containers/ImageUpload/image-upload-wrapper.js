@@ -17,14 +17,95 @@ export class ImageUploadWrapper extends React.Component{
 
     uploadWidget() {
         let _this = this;
-        const imageData = {};
-        window.cloudinary.openUploadWidget({ cloud_name: 'arts-connective', upload_preset: 'wabn9lxh', tags:['help']},
+        const imageData = [];
+            window.cloudinary.openUploadWidget(
+            {    
+                cloud_name: "arts-connective",    
+                upload_preset: "wabn9lxh",    
+                sources: ["local", "camera", "url"],
+                googleApiKey: "<image_search_google_api_key>",
+                showAdvancedOptions: true,    
+                cropping: false,    
+                multiple: true,    
+                defaultSource: "local",    
+                styles: {        
+                    palette: {            
+                        window: "#FFFFFF",            
+                        windowBorder: "#90A0B3",            
+                        tabIcon: "#4190CE",            
+                        menuIcons: "#5A616A",            
+                        textDark: "#000000",            
+                        textLight: "#FFFFFF",            
+                        link: "#4190CE",            
+                        action: "#FCBA4A",            
+                        inactiveTabIcon: "#141D1F",            
+                        error: "#EF694D",            
+                        inProgress: "#4190CE",            
+                        complete: "#85D66B",            
+                        sourceBg: "#E3EBED"        
+                    },        
+                    fonts: {            
+                        default: null,            
+                        "'Fira Sans', sans-serif": {
+                                url: "https://fonts.googleapis.com/css?family=Fira+Sans",
+                                active: true}
+                            }
+                    }
+                },
             function(error, result) {
-                    imageData.public_id = result[0].public_id;
-                    imageData.url = result[0].url               
+                if(error){console.log(error)}
+                if(result){
+                    console.log(result)
+                    for(let i=0; i<result.length; i++){
+                        imageData.push({
+                            public_id: result[i].public_id,
+                            url: result[i].url
+                        })
+                    }
+                    console.log(imageData)             
                 _this.props.dispatch(handleUploadedImage(imageData))
+                }
             })
     }
+
+    /*function showUploadWidget() 
+    { 
+        window.cloudinary.openUploadWidget(
+            {    
+                cloud_name: "arts-connective",    
+                upload_preset: "wabn9lxh",    
+                sources: ["local", "camera", "url"],
+                googleApiKey: "<image_search_google_api_key>",
+                showAdvancedOptions: true,    
+                cropping: true,    
+                multiple: false,    
+                defaultSource: "local",    
+                styles: {        
+                    palette: {            
+                        window: "#FFFFFF",            
+                        windowBorder: "#90A0B3",            
+                        tabIcon: "#4190CE",            
+                        menuIcons: "#5A616A",            
+                        textDark: "#000000",            
+                        textLight: "#FFFFFF",            
+                        link: "#4190CE",            
+                        action: "#FCBA4A",            
+                        inactiveTabIcon: "#141D1F",            
+                        error: "#EF694D",            
+                        inProgress: "#4190CE",            
+                        complete: "#85D66B",            
+                        sourceBg: "#E3EBED"        
+                    },        
+                    fonts: {            
+                        default: null,            
+                        "'Fira Sans', sans-serif": {
+                             url: "https://fonts.googleapis.com/css?family=Fira+Sans",
+                              active: true}
+                            }
+                    }
+                }, 
+            (err, result) => {if (!err) {console.log("Upload Widget event - ", result);}});
+        }*/
 
     handleImage(data){
         this.uploadWidget()
@@ -38,7 +119,7 @@ export class ImageUploadWrapper extends React.Component{
                 <div className='buttons'>
                     <Button onClick={this.uploadWidget} label='Add Image' type='button'/>
                 </div>
-                <div>
+                <div className='image-gallery'>
                     <RenderedImages images={this.props.images} />
                 </div>
             </div>
