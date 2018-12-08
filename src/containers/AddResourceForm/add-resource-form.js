@@ -50,7 +50,6 @@ class AddResourceForm extends React.Component{
     }
 
     render(){
-        console.log(this.props.step)
         const {onSubmit} = this.props;
         return(
             <div className='add-resource-form-panel'>

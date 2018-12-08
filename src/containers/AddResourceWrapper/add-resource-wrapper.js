@@ -14,13 +14,11 @@ export class AddResourceWrapper extends React.Component{
     }
 
     handleNext = () => {
-        console.log('handle next clicked');
         let index = this.state.index;
         let current;
         if (index >= 0 && index < formSteps.length-1){
             current = formSteps[index+1]
             let newIndex = index+1
-            console.log(newIndex)
             this.setState({
                 index: newIndex,
                 current: current,
@@ -42,6 +40,12 @@ export class AddResourceWrapper extends React.Component{
     }
 
     render(){
+        const images = [];
+        if(this.props.images.length > 0){
+            this.props.images.map(image =>
+                images.push(image.public_id)
+            )
+        }
         return(
             <div>
                 <AddResource 
@@ -50,7 +54,7 @@ export class AddResourceWrapper extends React.Component{
                     next={this.handleNext}
                     index={this.state.index}
                     length={formSteps.length}
-                    images={this.props.images.length > 0? this.props.images: null}
+                    images={images}
                 />
             </div>
         )

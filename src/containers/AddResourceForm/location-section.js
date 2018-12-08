@@ -8,24 +8,26 @@ const LocationSection = props => {
     const {handleSubmit, previousPage} = props;
     return (
         <form onSubmit={handleSubmit}>
-            <Field 
-                component={Input}
-                type='textarea'
-                label='Street Address'
-                name='street'
-            />
-            <Field 
-                component={Input}
-                type='textarea'
-                label='City'
-                name='city'
-            />
-            <Field 
-                component={Input}
-                type='textarea'
-                label='State'
-                name='state'
-            />
+            <div className='fields'>
+                <Field 
+                    component={Input}
+                    type='textarea'
+                    label='Street Address'
+                    name='street'
+                />
+                <Field 
+                    component={Input}
+                    type='textarea'
+                    label='City'
+                    name='city'
+                />
+                <Field 
+                    component={Input}
+                    type='textarea'
+                    label='State'
+                    name='state'
+                />
+            </div>
             <div className='row form-navigation-buttons'>
                 <button type='button' className='form-back' onClick={previousPage}>
                     Back

@@ -4,13 +4,13 @@ import {connect} from 'react-redux';
 import DisplayResource from '../../components/DisplayResource/display-resource';
 
 export class ResourceWrapper extends React.Component{
+    
     render(){
         if(this.props.resource){
             return(
                 <div>
                     <DisplayResource 
                         name={this.props.resource.name}
-                        imageUrl={(this.props.resource.images.length > 0) ? this.props.resource.images[0]: null}
                         value={(this.props.resource.price_value/1000).toFixed([2])}
                         unit={this.props.resource.price_unit}
                         additional={this.props.resource.price_additional}
@@ -21,6 +21,7 @@ export class ResourceWrapper extends React.Component{
                         street={this.props.resource.street}
                         city={this.props.resource.city}
                         state={this.props.resource.state}
+                        images={this.props.resource.images}
                     />
                 </div>
             )

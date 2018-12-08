@@ -22,7 +22,6 @@ class App extends React.Component {
               <Route path='/form' component={FormPage} />
             </Switch>
           </main>
-          <Footer />
       </div>
     );
   }

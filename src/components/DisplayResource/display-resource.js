@@ -1,13 +1,14 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import './display-resource.css';
+import ImageCarousel from '../../containers/ImageCarousel/imagecarousel';
 
 export default function DisplayResource(props){
-    let imageURL = props.images? props.images[0]: null
+    
     return(
         <Row>
             <Col className='resource-image' md={6}>
-                {props.imageUrl? (<img src={props.imageUrl}/>) : null}
+                <ImageCarousel images={props.images} />
             </Col>
             <Col className='resource-info' md={6}>
                 <h2>{props.name}</h2>
