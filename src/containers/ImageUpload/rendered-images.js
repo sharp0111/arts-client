@@ -20,7 +20,6 @@ export default class RenderedImages extends React.Component{
         )
         return(
             <CloudinaryContext cloudName='arts-connective'>
-                <p>New Images</p>
                 {newImages}
             </CloudinaryContext>
         )

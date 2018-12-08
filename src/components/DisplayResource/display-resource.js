@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'react-bootstrap';
+import DisplayCategories from '../Display/display-categories';
 import './display-resource.css';
 import ImageCarousel from '../../containers/ImageCarousel/imagecarousel';
 
@@ -9,6 +10,7 @@ export default function DisplayResource(props){
         <Row>
             <Col className='resource-image' md={6}>
                 <ImageCarousel images={props.images} />
+                <DisplayCategories category={props.category}/>
             </Col>
             <Col className='resource-info' md={6}>
                 <h2>{props.name}</h2>

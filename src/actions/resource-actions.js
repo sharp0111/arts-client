@@ -78,7 +78,7 @@ const handleCreateResource = (response, dispatch) =>{
         type: CREATE_RESOURCE_REQUEST_SUCCESS,
         response,
     });
-    dispatch(push('/resource/created'))
+    dispatch(push('/search'))
 }
 
 export const HANDLE_UPLOADED_IMAGE = 'HANDLE_UPLOADED_IMAGE';

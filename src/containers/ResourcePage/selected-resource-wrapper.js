@@ -12,6 +12,8 @@ export class SelectedResourceWrapper extends React.Component{
         if(id){
             this.props.dispatch(fetchResource(id))
         }
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 
     getQueryVariable = (variable) => {

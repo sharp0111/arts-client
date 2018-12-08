@@ -74,15 +74,16 @@ export class ImageUploadWrapper extends React.Component{
     }
   
     render(){
-
+        let content = this.props.images.length > 0 ?                 
+            <div className='image-gallery'>
+                <RenderedImages images={this.props.images} />
+            </div> :
+            <div className='buttons'>
+                <Button onClick={this.uploadWidget} label='Add Image' type='button'/>
+            </div>
         return(
             <div>
-                <div className='buttons'>
-                    <Button onClick={this.uploadWidget} label='Add Image' type='button'/>
-                </div>
-                <div className='image-gallery'>
-                    <RenderedImages images={this.props.images} />
-                </div>
+                {content}
             </div>
         )
     }

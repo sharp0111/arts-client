@@ -8,7 +8,7 @@
     height: 140px;
     width: 200px;
     flex: auto;
-    border: solid 1px black;
+    background-color: #E3EBED;
 }
 
 .thumbnail-image img{
