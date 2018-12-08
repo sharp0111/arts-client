@@ -68,46 +68,7 @@ export class ImageUploadWrapper extends React.Component{
             })
     }
 
-    /*function showUploadWidget() 
-    { 
-        window.cloudinary.openUploadWidget(
-            {    
-                cloud_name: "arts-connective",    
-                upload_preset: "wabn9lxh",    
-                sources: ["local", "camera", "url"],
-                googleApiKey: "<image_search_google_api_key>",
-                showAdvancedOptions: true,    
-                cropping: true,    
-                multiple: false,    
-                defaultSource: "local",    
-                styles: {        
-                    palette: {            
-                        window: "#FFFFFF",            
-                        windowBorder: "#90A0B3",            
-                        tabIcon: "#4190CE",            
-                        menuIcons: "#5A616A",            
-                        textDark: "#000000",            
-                        textLight: "#FFFFFF",            
-                        link: "#4190CE",            
-                        action: "#FCBA4A",            
-                        inactiveTabIcon: "#141D1F",            
-                        error: "#EF694D",            
-                        inProgress: "#4190CE",            
-                        complete: "#85D66B",            
-                        sourceBg: "#E3EBED"        
-                    },        
-                    fonts: {            
-                        default: null,            
-                        "'Fira Sans', sans-serif": {
-                             url: "https://fonts.googleapis.com/css?family=Fira+Sans",
-                              active: true}
-                            }
-                    }
-                }, 
-            (err, result) => {if (!err) {console.log("Upload Widget event - ", result);}});
-        }*/
-
-    handleImage(data){
+     handleImage(data){
         this.uploadWidget()
             .then((data) => this.props.dispatch(handleUploadedImage(data)))
     }

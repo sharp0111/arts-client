@@ -19,25 +19,17 @@ class AddResourceForm extends React.Component{
       }
 
     handleSubmit = (values) => {
-        const {availabilty, image1, image2, image3, name,
+        const {availabilty, name,
             additional, city, category_type, state, street, unit, rate, description
         } = values;
-        /*let calendar = {
-            mon: {start: parseInt(mon.start), end: parseInt(mon.end)},
-            tue: {start: parseInt(tue.start), end: parseInt(tue.end)},
-            wed: {start: parseInt(wed.start), end: parseInt(wed.end)},
-            thu: {start: parseInt(thu.start), end: parseInt(thu.end)},
-            fri: {start: parseInt(fri.start), end: parseInt(fri.end)},
-            sat: {start: parseInt(sat.start), end: parseInt(sat.end)},
-            sun: {start: parseInt(sun.start), end: parseInt(sun.end)},
-    }*/
+
         const category = [] 
         category_type.category.map(item => {
             category.push(item.value)
             return null;
         })
+        let images = this.props.images? this.props.images : null
         let type = category_type.type.value
-        let images = [image1, image2, image3]
         let value = parseFloat(rate, 10)*1000
         let data = {
             category: category,
@@ -87,6 +79,8 @@ class AddResourceForm extends React.Component{
         )
     }
 }
+
+
 
 AddResourceForm.propsType = {
     onSubmit: PropTypes.func.isRequired,
