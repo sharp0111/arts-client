@@ -82,13 +82,14 @@ $colors: (
     color: black;
   }
 
-  .navlink, a{
+  li a{
     color: white;
     margin-right: 20px;
   }
 
-  .navlink, a:hover{
+  li a:hover{
     color: #f3e762;
+    text-decoration: none;
   }
 
   .navbar-nav{

@@ -9,6 +9,7 @@ export class Search extends React.Component{
         console.log('submit')
         console.log(value)
         this.props.dispatch(push('/search'))
+        
     }
 
     render(){
