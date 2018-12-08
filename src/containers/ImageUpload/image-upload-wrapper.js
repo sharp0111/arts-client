@@ -1,8 +1,6 @@
 import React from 'react';
-import {Image, cloudinary} from 'cloudinary-react';
-import Loading from '../../components/Display/loading';
-import Images from './rendered-images';
-import Button from './upload-button';
+import RenderedImages from './rendered-images';
+import Button from '../FormElements/button';
 import {connect} from 'react-redux';
 import {handleUploadedImage} from '../../actions/index.actions';
 
@@ -16,7 +14,6 @@ export class ImageUploadWrapper extends React.Component{
         this.uploadWidget = this.uploadWidget.bind(this);
         this.handleImage = this.handleImage.bind(this);
     }
-
 
     uploadWidget() {
         let _this = this;
@@ -39,9 +36,10 @@ export class ImageUploadWrapper extends React.Component{
         return(
             <div>
                 <div className='buttons'>
-                    <Button onClick={this.uploadWidget} />
+                    <Button onClick={this.uploadWidget} label='Add Image' type='button'/>
                 </div>
-                <div className='uploaded-images'>
+                <div>
+                    <RenderedImages images={this.props.images} />
                 </div>
             </div>
         )
