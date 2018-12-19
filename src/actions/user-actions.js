@@ -14,7 +14,7 @@ export function registerUser(user) {
     });
     return {
         onRequest: FETCH_USER_SIGNUP_REQUEST_TRIGGERED,
-        onSuccess: handleCreateUserResponse,
+        onSuccess: FETCH_USER_SIGNUP_REQUEST_SUCCESS,
         onFailure: FETCH_USER_SIGNUP_REQUEST_FAILURE,
         promise,
     };
@@ -43,12 +43,12 @@ export function fetchUserLogin(username, password) {
 }
 
 const handleLoginResponse = (response, dispatch) => {
-    localStorage.setItem(config.TOKEN_CONTENT_KEY, response.token);
+    //localStorage.setItem(config.TOKEN_CONTENT_KEY, response.token);
     dispatch({
         type: FETCH_USER_LOGIN_REQUEST_SUCCESS,
         response,
     });
-    dispatch(push('/dashboard'));
+    dispatch(push('/search'));
   };
 
 export const LOGOUT_USER_REQUEST_TRIGGERED = 'LOGOUT_USER_REQUEST_TRIGGERED'
