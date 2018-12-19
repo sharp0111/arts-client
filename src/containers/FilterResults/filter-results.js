@@ -19,6 +19,7 @@ class FilterResults extends React.Component{
                 <SearchFilterSection 
                     {...this.props}
                 />
+                <button onClick={this.props.onClick}>Clear Filters</button>
             </FormSection>
             </div>
         )

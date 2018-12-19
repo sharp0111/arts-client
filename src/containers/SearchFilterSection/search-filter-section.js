@@ -9,12 +9,12 @@ const category = [
     {value: 'fin', label: 'Fine Art'},
     {value: 'dig', label: 'Digital Art'},
     {value: 'cra', label: 'Crafts'},
-    {value: 'fab', label: 'Fabrication'}
+    {value: 'fab', label: 'Fabrication'},
 ]
 
 const type = [
     {value: 'venue', label: 'Venue'},
-    {value: 'gear', label: 'Gear'}
+    {value: 'gear', label: 'Gear'},
 ]
 
 export default class CategoryTypeSection extends React.Component {

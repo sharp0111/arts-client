@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import DisplayResults from '../../components/DisplayResults/display-results';
 import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 import FilterResults from '../FilterResults/filter-results';
+import { FETCH_RESOURCE_SUCCESS } from '../../actions/index.actions';
 export class SearchResultsWrapper extends React.Component{
     constructor(props){
         super(props)
@@ -26,9 +27,40 @@ export class SearchResultsWrapper extends React.Component{
             type: input.value
         })
     }
+
+    filterResources = (resources) => {
+        console.log(resources)
+        const filteredResources = [];
+        resources.forEach(resource => {
+            console.log(resource.category)
+            if(resource.category.includes(this.state.category) && resource.type.includes(this.state.type)){
+                console.log(true)
+                filteredResources.push(resource)
+                console.log(filteredResources);
+            }
+            else if(resource.category.includes(this.state.category) && this.state.type===null){
+                filteredResources.push(resource)
+            }
+            else if(resource.type.includes(this.state.type) && this.state.category===null){
+                filteredResources.push(resource)
+            }
+        });
+        return (filteredResources.length>0?filteredResources:resources)
+    }
+
+    clearFilters = () => {
+        this.setState({
+            category: null,
+            type: null,
+        })
+    }
+    
     render(){
         if(this.props.resources){
-            let thumbnails = this.props.resources.map(item =>
+            let allResources = this.props.resources
+            let filteredResources = this.filterResources(allResources)
+            console.log(filteredResources);
+            let thumbnails = filteredResources.map(item =>
                 <ResourceThumbnail
                     imageUrl={(item.images.length > 0) ? item.images[0]: null}
                     key={item._id}
@@ -47,6 +79,7 @@ export class SearchResultsWrapper extends React.Component{
                                 handleCategory={this.handleCategory}
                                 handleType={this.handleType}
                                 multi={false}
+                                onClick={this.clearFilters}
                             />
                         </div>
                         <DisplayResults thumbnails={thumbnails}/>
