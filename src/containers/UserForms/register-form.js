@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-//import {registerUser, fetchUserLogin} from '../../actions/users';
+import {registerUser, fetchUserLogin} from '../../actions/index.actions';
 import Input from '../FormElements/input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 import {Link} from 'react-router-dom';
@@ -14,9 +14,9 @@ export class RegistrationForm extends React.Component {
         const {username, password, email} = values;
         const user = {username, password, email};
         console.log(user);
-        /*return this.props
+        return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(fetchUserLogin(username, password)));*/
+            .then(() => this.props.dispatch(fetchUserLogin(username, password)));
     }
 
     render(){
@@ -63,7 +63,7 @@ export class RegistrationForm extends React.Component {
                         Register
                     </button>
                 </form>
-                <p> or <Link to='/register/login'>login to your account</Link></p>
+                <p> or <Link to='/form/login'>login to your account</Link></p>
             </div>
             </div>
         );

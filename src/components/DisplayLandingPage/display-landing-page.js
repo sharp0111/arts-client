@@ -1,5 +1,6 @@
 import React from 'react';
 import {Jumbotron, Row, Col, Grid} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import YouTube from 'react-youtube';
 import Search from '../../containers/Search/search';
 import ColorList from '../../containers/ColorList/color-list';
@@ -43,7 +44,9 @@ export default function DisplayLandingPage(props){
                             <li>List item two</li>
                             <li>List item three</li>
                         </ul>
-                        <button>Sign Up</button>
+                        <Link to='/form/register'>
+                            <button>Sign Up</button>
+                        </Link>
                     </Col>
                 </Row>
                 <h2>Browse By Category</h2>

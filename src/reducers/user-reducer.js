@@ -1,24 +1,22 @@
 import * as actionTypes from '../actions/index.actions';
 
 const initialState = {
-  _id: null,
-  username: null,
-  resources: null,
+    token: null,
+    _id: null,
+    username: null,
+    resources: [],
 }
 
 export default function user(state=initialState, action){
     switch(action.type){
         case actionTypes.FETCH_USER_LOGIN_REQUEST_SUCCESS: {
+            console.log(action.response)
             return{
                 ...state,
-                _id: action.response.userInfo._id,
-                username: action.repsonse.userInfo.username,
-                resources: action.response.userInfo.resources,
-            }
-        }
-        case actionTypes.LOGOUT_USER_REQUEST_SUCCESS: {
-            return {
-                state: initialState,
+                token: action.response.token,
+                _id: action.response._id,
+                username: 'banana',
+                resources: action.response.resources,
             }
         }
         default: {

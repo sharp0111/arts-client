@@ -7,7 +7,7 @@ export const FETCH_USER_SIGNUP_REQUEST_FAILURE = 'FETCH_USER_SIGNUP_REQUEST_FAIL
 export const CREATE_USER_REQUEST_SUCCESS = 'CREATE_USER_REQUEST_SUCCESS';
 
 export function registerUser(user) {
-    const promise = fetch(`${config.USER_CREATE}`, {
+    const promise = fetch(`${config.API_BASE_URL}/user`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({user}),
@@ -26,7 +26,7 @@ export const FETCH_USER_LOGIN_REQUEST_FAILURE = 'FETCH_USER_LOGIN_REQUEST_FAILUR
 
 export function fetchUserLogin(username, password) {
     console.log('fetch user login');
-  const promise = fetch(`${config.USER_ENDPOINT}`, {
+  const promise = fetch(`${config.API_BASE_URL}/user/login`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
