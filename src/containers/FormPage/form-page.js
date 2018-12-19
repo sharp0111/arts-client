@@ -13,7 +13,7 @@ export default class FormPage extends React.Component{
                 <Switch>
                     <Route path='/form/resource' component={AddResourceWrapper} />
                     <Route path='/form/register' component={RegistrationForm} />
-                    <Route path='/form/register' component={LoginForm} />
+                    <Route path='/form/login' component={LoginForm} />
                 </Switch>
             </div>
         )
