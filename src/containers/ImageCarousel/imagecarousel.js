@@ -6,7 +6,9 @@ import {Image} from 'cloudinary-react';
 export default class ImageCarousel extends React.Component{
     render(){
         console.log(this.props.images)
-        let slides = this.props.images.map((image, index) => 
+
+        let slides;
+        slides = this.props.images.map((image, index) => 
             <div key={index}>
                 <Image cloudName='arts-connective' publicId={image} height='500' width='650' crop='fill'/>
             </div>
