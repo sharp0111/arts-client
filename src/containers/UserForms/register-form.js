@@ -23,7 +23,7 @@ export class RegistrationForm extends React.Component {
         return (
             <div className='registration'>
             <div className='user-form'>
-                <h2>Sign up for Money Jars</h2>
+                <h2>Sign up for Arts Connective</h2>
                 
                 <form  
                     className="login-form form-single"

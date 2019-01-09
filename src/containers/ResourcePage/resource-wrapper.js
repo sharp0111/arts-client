@@ -51,6 +51,9 @@ export class ResourceWrapper extends React.Component{
 
     render(){
         if(this.props.resource){
+            console.log(this.props.resource)
+            console.log(this.props.resource.category)
+            console.log(this.props.resource.images)
             return(
                 <div>
                     <DisplayResource 
@@ -61,11 +64,11 @@ export class ResourceWrapper extends React.Component{
                         calendar={this.props.resource.calendar}
                         description={this.props.resource.description}
                         type={this.props.resource.type}
-                        category={this.props.resource.category}
+                        category={this.props.resource.category.length > 0? this.props.resource.category: null}
                         street={this.props.resource.street}
                         city={this.props.resource.city}
                         state={this.props.resource.state}
-                        images={this.props.resource.images}
+                        images={this.props.resource.images.length > 0? this.props.resource.images : null}
                         reviews={this.filteredReviews}
                     />
                 </div>
