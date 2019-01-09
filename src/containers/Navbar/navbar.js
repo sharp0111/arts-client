@@ -20,7 +20,7 @@ export default class Navigation extends React.Component{
                     <NavItem eventKey={1} href='/form/login' className='nav-link'>
                         Log In
                     </NavItem>
-                    <NavItem eventKey={1} href='/form/signup' className='nav-link'>
+                    <NavItem eventKey={1} href='/form/register' className='nav-link'>
                         Register
                     </NavItem>
                     <NavItem eventKey={1} href='/dashboard' className='nav-link'>

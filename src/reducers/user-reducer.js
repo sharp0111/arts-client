@@ -15,7 +15,7 @@ export default function user(state=initialState, action){
                 ...state,
                 token: action.response.token,
                 _id: action.response._id,
-                username: 'banana',
+                username: action.response.username,
                 resources: action.response.resources,
             }
         }
