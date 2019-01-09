@@ -55,6 +55,7 @@ export class AddResourceWrapper extends React.Component{
                     index={this.state.index}
                     length={formSteps.length}
                     images={images}
+                    userId={this.props.user._id}
                 />
             </div>
         )
@@ -62,7 +63,8 @@ export class AddResourceWrapper extends React.Component{
 }
 
 const mapStatetoProps = state => ({
-    images: state.resources.images
+    images: state.resources.images,
+    user: state.user
 })
 
 export default connect(mapStatetoProps)(AddResourceWrapper)

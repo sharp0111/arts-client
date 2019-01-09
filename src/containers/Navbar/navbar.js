@@ -14,9 +14,6 @@ export default class Navigation extends React.Component{
                 </Link>
                 </Navbar.Brand>
                 <Nav>
-                    <NavItem eventKey={1} href='/form/resource' className='nav-link'>
-                        Add Resource
-                    </NavItem>
                     <NavItem eventKey={1} href='/form/login' className='nav-link'>
                         Log In
                     </NavItem>
