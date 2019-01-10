@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import Search from '../Search/search';
+import {logoutUserRequest} from '../../actions/user-actions';
 
 
 export class Navigation extends React.Component{
 
     handleLogOut = () => {
         console.log('log out')
+        this.props.dispatch(logoutUserRequest());
     }
 
     render(){

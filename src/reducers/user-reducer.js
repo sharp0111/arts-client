@@ -19,6 +19,12 @@ export default function user(state=initialState, action){
                 resources: action.response.resources,
             }
         }
+        case actionTypes.LOGOUT_USER_REQUEST_SUCCESS: {
+            return{
+                ...state,
+                ...initialState
+            }
+        }
         default: {
             return state;
         }
