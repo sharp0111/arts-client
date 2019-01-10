@@ -1,9 +1,10 @@
-
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
+import Dashboard from '../../components/Dashboard/dashboard';
 
 export class DashboardWrapper extends React.Component{
+    //fetch refreshed user information on mount
     render(){
         console.log(this.props.loggedIn)
         if(!this.props.loggedIn){
@@ -13,10 +14,7 @@ export class DashboardWrapper extends React.Component{
         }
         return(
             <div className="container profile-page">
-                <p>Profile Page</p>
-                <Link to='form/resource'>
-                    + Add Resource
-                </Link>
+                <Dashboard />
             </div>
         )
     }

@@ -74,11 +74,13 @@ export function createResource(data){
 }
 
 const handleCreateResource = (response, dispatch) =>{
+    console.log(response.resource._id)
+    let id = response.resource._id
     dispatch({
         type: CREATE_RESOURCE_REQUEST_SUCCESS,
         response,
     });
-    dispatch(push('/resource/created'))
+    dispatch(push(`/resource/selected?id=${id}`))
 }
 
 export const HANDLE_UPLOADED_IMAGE = 'HANDLE_UPLOADED_IMAGE';

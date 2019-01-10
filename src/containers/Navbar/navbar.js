@@ -22,9 +22,6 @@ export class Navigation extends React.Component{
                 <NavItem eventKey={2} href='/form/register' className='nav-link'>
                     Register
                 </NavItem>
-                <NavItem eventKey={3} href='/dashboard' className='nav-link'>
-                    Dashboard
-                </NavItem>
                 <Search 
                     placeholder='Search'
                     key='navbar'
@@ -38,7 +35,7 @@ export class Navigation extends React.Component{
                 <NavItem eventKey={1} className='nav-link' onClick={()=>this.handleLogOut()}>
                     Log Out
                 </NavItem>
-                <NavItem eventKey={3} href='/dashboard' className='nav-link'>
+                <NavItem eventKey={2} href='/dashboard' className='nav-link'>
                     Dashboard
                 </NavItem>
                 <Search 

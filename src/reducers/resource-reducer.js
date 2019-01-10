@@ -24,7 +24,8 @@ export default function resource(state=initialState, action){
             console.log(action.response)
             return{
                 ...state,
-                selection: action.response
+                selection: action.response,
+                images: initialState.images,
             }
         }
         case actionTypes.FETCH_RESOURCE_SUCCESS: {
