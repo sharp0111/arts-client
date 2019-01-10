@@ -50,10 +50,7 @@ export class ResourceWrapper extends React.Component{
     }
 
     render(){
-        if(this.props.resource){
-            console.log(this.props.resource)
-            console.log(this.props.resource.category)
-            console.log(this.props.resource.images)
+        if(this.props.loaded){
             return(
                 <div>
                     <DisplayResource 
@@ -79,6 +76,7 @@ export class ResourceWrapper extends React.Component{
 }
 
 const mapStateToProps = state => ({
+    loaded: state.resources.selection._id !==undefined,
     resource: state.resources.selection
 })
 
