@@ -31,6 +31,7 @@ class AddResourceForm extends React.Component{
         let images = this.props.images? this.props.images : null
         let type = category_type.type.value
         let value = parseFloat(rate, 10)*1000
+        let userId = this.props.userId
         let data = {
             category: category,
             price_value: value,
@@ -44,12 +45,14 @@ class AddResourceForm extends React.Component{
             street: street,
             city: city,
             state: state,
+            userId: userId,
         }
         console.log(data)
         return this.props.dispatch(createResource(data))
     }
 
     render(){
+        console.log(this.props.userId)
         const {onSubmit} = this.props;
         return(
             <div className='add-resource-form-panel'>

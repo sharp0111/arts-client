@@ -48,7 +48,7 @@ const handleLoginResponse = (response, dispatch) => {
         type: FETCH_USER_LOGIN_REQUEST_SUCCESS,
         response,
     });
-    dispatch(push('/profile'));
+    dispatch(push('/dashboard'));
   };
 
 export const LOGOUT_USER_REQUEST_TRIGGERED = 'LOGOUT_USER_REQUEST_TRIGGERED'

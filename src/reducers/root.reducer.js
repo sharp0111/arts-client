@@ -4,7 +4,7 @@ import {reducer as reduxFormReducer} from 'redux-form';
 import resourceReducer from './resource-reducer';
 import userReducer from './user-reducer';
 
-export default (history) => combineReducers({
+export const createRootReducer = (history) => combineReducers({
     router: connectRouter(history),
     form: reduxFormReducer,
     resources: resourceReducer,
