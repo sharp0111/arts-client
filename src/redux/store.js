@@ -1,11 +1,11 @@
-import { createStore, compose, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware} from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import middleware from './middleware';
 import {createBrowserHistory} from 'history';
-import createRootReducer from '../reducers/root.reducer';
+import {createRootReducer} from '../reducers/root.reducer';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 export const history = createBrowserHistory();
@@ -29,7 +29,7 @@ export default (initialState = {}, history) => {
     );
 
     const store = createStore(
-        createRootReducer(history),
+        connectRouter(history)(persistedReducer),
         initialState,
         enhancers,
     );

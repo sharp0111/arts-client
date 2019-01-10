@@ -15,9 +15,11 @@ const MOUNT_NODE = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
             <ConnectedRouter history={history}>
                 <App />
             </ConnectedRouter>
+        </PersistGate>
     </Provider>,
     MOUNT_NODE
 );
