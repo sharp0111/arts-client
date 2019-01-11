@@ -11,7 +11,11 @@ export class MakeReservationForm extends React.Component{
     }
 
     render(){
-        
+        console.log(this.props.cost)
+        let totalCost = this.props.cost!==null? 
+            <div>
+                <p>Total Cost: ${this.props.cost}</p>
+            </div>: null
         return(
             <div className='make-reservation-form'>
                 <form
@@ -40,6 +44,7 @@ export class MakeReservationForm extends React.Component{
                             step={.5}
                             name='units'
                             validate={[required, nonEmpty]}
+                            onChange={this.props.onChange}
                         />
                         <p>{this.props.price_unit}s</p>
                     </div>
@@ -49,6 +54,7 @@ export class MakeReservationForm extends React.Component{
                         name='message'
                         rows={2}
                     />
+                    {totalCost}
                     <button
                         className='form-button'
                         type='submit'

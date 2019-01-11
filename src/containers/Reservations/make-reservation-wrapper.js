@@ -8,6 +8,7 @@ export class MakeReservationWrapper extends React.Component{
         super()
         this.state = {
             overlay: false,
+            units: null,
         }
     }
 
@@ -17,8 +18,20 @@ export class MakeReservationWrapper extends React.Component{
         })
     }
 
+    handleChange = (value) => {
+        console.log(value.units);
+        this.setState({
+            units: value.units,
+        })
+    }
+
     render(){
         console.log(this.state.overlay)
+        let cost;
+        if(this.state.units!==null){
+            cost=(this.props.resource.price_value*this.state.units/1000).toFixed(2)
+        }
+        console.log(cost)
         let reserve = this.state.overlay?
             <div>
                 <Overlay 
@@ -26,6 +39,8 @@ export class MakeReservationWrapper extends React.Component{
                     price_value={this.props.resource.price_value}
                     price_unit={this.props.resource.price_unit}
                     resourceId={this.props.resource._id}
+                    cost={cost}
+                    onChange={this.handleChange}
                 />
             </div> :
             <div></div>
