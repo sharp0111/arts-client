@@ -4,6 +4,7 @@ import DisplayCategories from '../Display/display-categories';
 import './display-resource.css';
 import ImageCarousel from '../../containers/ImageCarousel/imagecarousel';
 import ReviewsWrapper from '../../containers/Reviews/reviews-wrapper';
+import MakeReservationWrapper from '../../containers/Reservations/make-reservation-wrapper';
 
 export default function DisplayResource(props){
     
@@ -21,6 +22,7 @@ export default function DisplayResource(props){
                     <p className='price-rate'><span>{props.value} </span> / <span> {props.unit}</span></p>
                     <p>{props.additional}</p>
                 </div>
+                <MakeReservationWrapper />
             </Col>
         </Row>
         <Row>
