@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Button from '../FormElements/button';
+import Overlay from '../../components/Modal/overlay';
 
 export class MakeReservationWrapper extends React.Component{
     constructor(){
@@ -18,12 +19,20 @@ export class MakeReservationWrapper extends React.Component{
 
     render(){
         console.log(this.state.overlay)
+        let reserve = this.state.overlay?
+            <div>
+                <Overlay 
+                    onClick={this.handleClick}
+                />
+            </div> :
+            <div></div>
         return(
             <div>
                 <Button 
-                    label='Reserve Now'
+                    label={this.state.overlay?'Cancel': 'Reserve'}
                     onClick={this.handleClick}
                 />
+                {reserve}
             </div>
         )
     }
