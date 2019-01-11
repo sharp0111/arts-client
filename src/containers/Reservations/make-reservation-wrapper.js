@@ -36,6 +36,7 @@ export class MakeReservationWrapper extends React.Component{
             <div>
                 <Overlay 
                     userId={this.props.user._id}
+                    hostId={this.props.resource.hostId}
                     price_value={this.props.resource.price_value}
                     price_unit={this.props.resource.price_unit}
                     resourceId={this.props.resource._id}

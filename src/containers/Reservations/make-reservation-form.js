@@ -8,14 +8,29 @@ export class MakeReservationForm extends React.Component{
 
     onSubmit(values){
         console.log(values)
+        const {date, time, units, message} = values;
+        const totalCost = this.props.cost;
+        const data = {
+            hostId: this.props.hostId,
+            guestId: this.props.userId,
+            resourceId: this.props.resourceId,
+            start_date: date,
+            start_time: time,
+            unit_price: this.props.price_unit,
+            unit_number: units,
+            total_price: totalCost,
+            message: message,
+        }
+        console.log(data)
     }
 
     render(){
         console.log(this.props.cost)
-        let totalCost = this.props.cost!==null? 
+        let totalCost = this.props.cost? 
             <div>
                 <p>Total Cost: ${this.props.cost}</p>
-            </div>: null
+            </div>: 
+            <div></div>
         return(
             <div className='make-reservation-form'>
                 <form
