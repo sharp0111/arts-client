@@ -4,6 +4,7 @@ import AddResourceWrapper from '../AddResourceWrapper/add-resource-wrapper';
 import ImageUploadWrapper from '../ImageUpload/image-upload-wrapper';
 import RegistrationForm from '../UserForms/register-form';
 import LoginForm from '../UserForms/login-form';
+import MakeReservationForm from '../Reservations/make-reservation-form';
 
 export default class FormPage extends React.Component{
     render(){
@@ -14,6 +15,7 @@ export default class FormPage extends React.Component{
                     <Route path='/form/resource' component={AddResourceWrapper} />
                     <Route path='/form/register' component={RegistrationForm} />
                     <Route path='/form/login' component={LoginForm} />
+                    <Route path='/form/reservation' component={MakeReservationForm} />
                 </Switch>
             </div>
         )

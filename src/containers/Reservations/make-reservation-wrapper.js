@@ -22,7 +22,10 @@ export class MakeReservationWrapper extends React.Component{
         let reserve = this.state.overlay?
             <div>
                 <Overlay 
-                    onClick={this.handleClick}
+                    userId={this.props.user._id}
+                    price_value={this.props.resource.price_value}
+                    price_unit={this.props.resource.price_unit}
+                    resourceId={this.props.resource._id}
                 />
             </div> :
             <div></div>
