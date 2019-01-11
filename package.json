@@ -50,6 +50,7 @@
     "react-app-polyfill": "^0.1.3",
     "react-available-times": "^1.2.1",
     "react-bootstrap": "^0.32.4",
+    "react-click-outside": "^3.0.1",
     "react-dev-utils": "^6.1.1",
     "react-dom": "^16.6.3",
     "react-media": "^1.8.0",
