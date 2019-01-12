@@ -42,6 +42,14 @@ export default function resource(state=initialState, action){
                 images: action.image
             }
         }
+        case actionTypes.FETCH_USER_BASIC_INFO_REQUEST_SUCCESS: {
+            console.log(action.response)
+            console.log(action.response.user.resources)
+            return{
+                ...state,
+                thumbnails: action.response.user.resources,
+            }
+        }
         default: {
             return state;
         }
