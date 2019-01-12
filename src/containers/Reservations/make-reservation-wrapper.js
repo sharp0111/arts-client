@@ -9,12 +9,14 @@ export class MakeReservationWrapper extends React.Component{
         this.state = {
             overlay: false,
             units: null,
+            complete: false,
         }
     }
 
     handleClick = () => {
         this.setState({
-            overlay: !this.state.overlay
+            overlay: !this.state.overlay,
+            complete: false,
         })
     }
 
@@ -22,6 +24,14 @@ export class MakeReservationWrapper extends React.Component{
         console.log(value.units);
         this.setState({
             units: value.units,
+        })
+    }
+
+    completeReservation = () => {
+        console.log('complete');
+        this.setState({
+            complete: true,
+            overlay: false,
         })
     }
 
@@ -42,8 +52,15 @@ export class MakeReservationWrapper extends React.Component{
                     resourceId={this.props.resource._id}
                     cost={cost}
                     onChange={this.handleChange}
+                    onComplete={this.completeReservation}
                 />
             </div> :
+            <div></div>
+        let confirm = this.state.complete?
+            <div>
+                <h3>Thank You!</h3>
+                <p>We'll let you know when your reservation is approved</p>
+            </div>:
             <div></div>
         return(
             <div>
@@ -52,6 +69,7 @@ export class MakeReservationWrapper extends React.Component{
                     onClick={this.handleClick}
                 />
                 {reserve}
+                {confirm}
             </div>
         )
     }

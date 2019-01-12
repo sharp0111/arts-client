@@ -3,6 +3,7 @@ import {Field, reduxForm} from 'redux-form';
 import Input from '../FormElements/input';
 import TextArea from '../FormElements/textarea';
 import {required, nonEmpty} from '../../validators';
+import {createReservation} from '../../actions/reservation-actions';
 
 export class MakeReservationForm extends React.Component{
 
@@ -16,12 +17,14 @@ export class MakeReservationForm extends React.Component{
             resourceId: this.props.resourceId,
             start_date: date,
             start_time: time,
-            unit_price: this.props.price_unit,
+            unit_price: this.props.price_value,
             unit_number: units,
             total_price: totalCost,
             message: message,
         }
         console.log(data)
+        return this.props.dispatch(createReservation(data))
+            .then(() => this.props.dispatch(this.props.onComplete))
     }
 
     render(){
