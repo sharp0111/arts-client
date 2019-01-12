@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import NeedAction from '../../containers/Dashboard/need-action';
+import Pending from '../../containers/Dashboard/pending';
+import './dashboard.css';
 
 export default function Dashboard(props){
     return(
@@ -12,8 +15,10 @@ export default function Dashboard(props){
                 </p>
             </div>
             <div>
-                <h3>Alert section</h3>
-                <p>Here would be requests to book, reviews to write, etc</p>
+                <h3>Need Action</h3>
+                <NeedAction {...props} />
+                <h3>Pending Approval</h3>
+                <Pending {...props}/>
             </div>
             <div>
                 <h3>Reservation sections</h3>

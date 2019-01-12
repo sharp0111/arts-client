@@ -21,30 +21,24 @@
 blockquote{
     line-height: 1.6em;
     font-size: 16px;
-    margin: 10px 0;
+    margin-bottom: 10px;
     padding: 2px;
   }
-  
-  blockquote::before{
-    color: #ccc;
-    content: "\201C";;
-    font-size: 24px;
-  }
-  
-  blockquote::after{
-    color: #ccc;
-    content: "\201D";;
-    font-size: 24px;
- 
-  }
 
-  .author{
-      font-weight: bold;
-      text-align: right;
-      padding-right: 30px;
-      color: #141D1F;
-  }
+.author{
+    font-weight: bold;
+    color: #141D1F;
+}
 
-  .author::before{
-    content: "\2014";
-  }
+.review-meta{
+    display: flex;
+    align-items: flex-end;
+}
+
+.author-avatar{
+    background-color: lightblue;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}

@@ -43,7 +43,6 @@ export function fetchUserLogin(username, password) {
 }
 
 const handleLoginResponse = (response, dispatch) => {
-    //localStorage.setItem(config.TOKEN_CONTENT_KEY, response.token);
     dispatch({
         type: FETCH_USER_LOGIN_REQUEST_SUCCESS,
         response,
@@ -62,3 +61,22 @@ export function logoutUserRequest(){
     }
 }
 
+export const FETCH_USER_BASIC_INFO_REQUEST_TRIGGERED = 'FETCH_USER_BASIC_INFO_REQUEST_TRIGGERED';
+export const FETCH_USER_BASIC_INFO_REQUEST_SUCCESS = 'FETCH_USER_BASIC_INFO_REQUEST_SUCCESS';
+export const FETCH_USER_BASIC_INFO_REQUEST_FAILURE = 'FETCH_USER_BASIC_INFO_REQUEST_FAILURE';
+
+export function fetchUserBasicInfo(token) {
+    console.log('fetch user basic info')
+    const promise = fetch(`${config.API_BASE_URL}/user/protected`, {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `JWT ${token}`
+        }
+    });
+    return {
+        onRequest: FETCH_USER_BASIC_INFO_REQUEST_TRIGGERED,
+        onSuccess: FETCH_USER_BASIC_INFO_REQUEST_SUCCESS,
+        onFailure: FETCH_USER_BASIC_INFO_REQUEST_FAILURE,
+        promise,
+    };
+}
