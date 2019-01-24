@@ -5,6 +5,7 @@ import Input from '../FormElements/input';
 import SelectInput from '../FormElements/select-input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 import {Link} from 'react-router-dom';
+import AvatarUploadWrapper from './avatar-upload-wrapper';
 import './userforms.css';
 
 const passwordLength = length({min: 10, max: 72});
@@ -15,6 +16,19 @@ const state = [
 ]
 
 export class RegistrationForm extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            image: null,
+        }
+        this.handleImage = this.handleImage.bind(this);
+    }
+
+    handleImage(data){
+        console.log(data)
+        this.setState({image: data})
+    }
+
 
     onSubmit(values){
         const {password, email, firstName, lastName, phone, address_1, address_2,
@@ -35,6 +49,10 @@ export class RegistrationForm extends React.Component {
                 <form  
                     className="login-form form-single"
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+                    <AvatarUploadWrapper 
+                        handleImage={this.handleImage}
+                        image={this.state.image}
+                    />
                     <Field
                         component={Input}
                         type="text"
