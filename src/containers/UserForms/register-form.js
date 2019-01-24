@@ -17,8 +17,10 @@ const state = [
 export class RegistrationForm extends React.Component {
 
     onSubmit(values){
-        const {username, password, email} = values;
-        const user = {username, password, email};
+        const {password, email, firstName, lastName, phone, address_1, address_2,
+            city, state, zipcode} = values;
+        const user = {password, email, firstName, lastName, phone, address_1, address_2,
+            city, state, zipcode};
         console.log(user);
         /*return this.props
             .dispatch(registerUser(user))
@@ -44,7 +46,7 @@ export class RegistrationForm extends React.Component {
                         component={Input}
                         type="text"
                         label="Last name"
-                        name="lastname"
+                        name="lastName"
                         validate={[required, nonEmpty, isTrimmed]}
                     />
                     <Field
