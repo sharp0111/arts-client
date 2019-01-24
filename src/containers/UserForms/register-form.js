@@ -2,11 +2,17 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser, fetchUserLogin} from '../../actions/index.actions';
 import Input from '../FormElements/input';
+import SelectInput from '../FormElements/select-input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 import {Link} from 'react-router-dom';
+import './userforms.css';
 
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
+
+const state = [
+    {value: 'nv', label: 'NV'},
+]
 
 export class RegistrationForm extends React.Component {
 
@@ -14,25 +20,64 @@ export class RegistrationForm extends React.Component {
         const {username, password, email} = values;
         const user = {username, password, email};
         console.log(user);
-        return this.props
+        /*return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(fetchUserLogin(username, password)));
+            .then(() => this.props.dispatch(fetchUserLogin(username, password)));*/
     }
 
     render(){
         return (
             <div className='registration'>
             <div className='user-form'>
-                <h2>Sign up for Arts Connective</h2>               
+                <h2>Sign up for Rent Art Stuff</h2>               
                 <form  
                     className="login-form form-single"
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                     <Field
                         component={Input}
                         type="text"
-                        label="Username"
-                        name="username"
+                        label="First Name"
+                        name="firstName"
                         validate={[required, nonEmpty, isTrimmed]}
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
+                        label="Last name"
+                        name="lastname"
+                        validate={[required, nonEmpty, isTrimmed]}
+                    />
+                    <Field
+                        component={Input}
+                        type="tel"
+                        label="Phone number"
+                        name="phone"
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
+                        label="Street Address line 1"
+                        name="address_1"
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
+                        label="City"
+                        name="city"
+                    />
+                    <label>State</label>
+                    <Field
+                        component={SelectInput}
+                        type="text"
+                        label="State"
+                        name="state"
+                        options={state}
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
+                        label="Zipcode"
+                        name="zipcode"
                     />
                     <Field
                         component={Input}
