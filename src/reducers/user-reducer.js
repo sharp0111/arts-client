@@ -39,15 +39,15 @@ export default function user(state=initialState, action){
             return{
                 ...state,
                 thumbnails: action.response.user.resources,
-                firstName: action.response.firstName,
-                lastName: action.response.lastName,
-                avatar: action.response.avatar,
-                address_1: action.response.address_1,
-                address_2: action.response.address_2,
-                city: action.response.city,
-                state: action.response.state,
-                zipcode: action.response.zipcode,
-                resources: action.response.resources,
+                firstName: action.response.user.firstName,
+                lastName: action.response.user.lastName,
+                avatar: action.response.user.avatar,
+                address_1: action.response.user.address_1,
+                address_2: action.response.user.address_2,
+                city: action.response.user.city,
+                state: action.response.user.state,
+                zipcode: action.response.user.zipcode,
+                resources: action.response.user.resources,
             }
         }
         case actionTypes.LOGOUT_USER_REQUEST_SUCCESS: {
