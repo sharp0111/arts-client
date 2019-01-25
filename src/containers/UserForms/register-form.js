@@ -12,7 +12,7 @@ const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
 const state = [
-    {value: 'nv', label: 'NV'},
+    {value: 'NV', label: 'NV'},
 ]
 
 export class RegistrationForm extends React.Component {

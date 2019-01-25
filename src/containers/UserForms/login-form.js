@@ -20,7 +20,6 @@ export class LoginForm extends React.Component {
                         className='login-form form-single'
                         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                         <div className='form-column'>
-
                         <Field
                             component={Input}
                             type='text'
@@ -43,7 +42,6 @@ export class LoginForm extends React.Component {
                             Log in
                         </button>
                         </div>
-
                     </form>
                 <p> or <Link to='/form/register'>Create a new account</Link></p>
             </div>

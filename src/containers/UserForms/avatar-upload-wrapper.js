@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../FormElements/button';
-import Avatar from './avatar';
+import Avatar from '../Avatar/avatar';
 
 export default class AvatarUploadWrapper extends React.Component{
     constructor(){
@@ -64,7 +64,11 @@ export default class AvatarUploadWrapper extends React.Component{
 
     render(){
         let content = this.props.image ?
-            <Avatar image={this.props.image}/> :
+            <Avatar 
+                image={this.props.image}
+                height='300'
+                width='300'
+            /> :
             <Button onClick={this.uploadWidget} label='Choose profile image' type='button'/>
         return(
             <div className='avatar-wrapper'>

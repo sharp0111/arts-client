@@ -2,18 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import NeedAction from '../../containers/Dashboard/need-action';
 import Pending from '../../containers/Dashboard/pending';
+import Profile from './profile';
 import './dashboard.css';
 
 export default function Dashboard(props){
     return(
         <div className='dashboard'>
-            <h2>This will be the main user page</h2>
-            <div>
-                <h3>Profile section</h3>
-                <p>Maybe just a link or collapsed part, since they probably
-                    won't have to look at it all the time? Mostly for editing
-                </p>
-            </div>
+            <Profile user={props.user}/>
             <div>
                 <h3>Need Action</h3>
                 <NeedAction {...props} />

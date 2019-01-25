@@ -34,6 +34,7 @@ export class DashboardWrapper extends React.Component{
                     action={needAction}
                     pending={pendingApproval}
                     userId ={this.props.user._id}
+                    user={this.props.user}
                />
             </div>
         )

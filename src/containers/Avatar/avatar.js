@@ -10,8 +10,8 @@ export default class Avatar extends React.Component{
         <div className='avatar'>
             <Image
                 publicId={this.props.image}
-                width='300'
-                height='300'
+                width={this.props.width}
+                height={this.props.height}
                 gravity='faces'
                 crop='fill'
             />
