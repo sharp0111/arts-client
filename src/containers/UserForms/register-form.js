@@ -105,6 +105,12 @@ export class RegistrationForm extends React.Component {
                     <Field
                         component={Input}
                         type="text"
+                        label="Street Address line 2"
+                        name="address_2"
+                    />
+                    <Field
+                        component={Input}
+                        type="text"
                         label="City"
                         name="city"
                     />
