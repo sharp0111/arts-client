@@ -6,7 +6,7 @@ import SelectInput from '../FormElements/select-input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 import {Link} from 'react-router-dom';
 import AvatarUploadWrapper from './avatar-upload-wrapper';
-import './userforms.css';
+import './userforms.scss';
 
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
@@ -58,41 +58,44 @@ export class RegistrationForm extends React.Component {
                 <form  
                     className="login-form form-single"
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-                    <AvatarUploadWrapper 
-                        handleImage={this.handleImage}
-                        image={this.state.image}
-                    />
-                    <div className='form-double'>
+                    <div className='form-column'>
+                        <AvatarUploadWrapper 
+                            handleImage={this.handleImage}
+                            image={this.state.image}
+                        />
+                        <div className='form-double'>
+                            <Field
+                                className='double-input'
+                                component={Input}
+                                type="text"
+                                label="First Name"
+                                name="firstName"
+                                validate={[required, nonEmpty, isTrimmed]}
+                            />
+                            <Field
+                                component={Input}
+                                className='double-input'
+                                type="text"
+                                label="Last name"
+                                name="lastName"
+                                validate={[required, nonEmpty, isTrimmed]}
+                            />
+                        </div>
                         <Field
-                            className='double-input'
                             component={Input}
                             type="text"
-                            label="First Name"
-                            name="firstName"
+                            label="Email"
+                            name="email"
                             validate={[required, nonEmpty, isTrimmed]}
                         />
                         <Field
                             component={Input}
-                            className='double-input'
-                            type="text"
-                            label="Last name"
-                            name="lastName"
-                            validate={[required, nonEmpty, isTrimmed]}
+                            type="tel"
+                            label="Phone number"
+                            name="phone"
                         />
                     </div>
-                    <Field
-                        component={Input}
-                        type="text"
-                        label="Email"
-                        name="email"
-                        validate={[required, nonEmpty, isTrimmed]}
-                    />
-                    <Field
-                        component={Input}
-                        type="tel"
-                        label="Phone number"
-                        name="phone"
-                    />
+                    <div className='form-column' >
                     <Field
                         component={Input}
                         type="text"
@@ -146,6 +149,7 @@ export class RegistrationForm extends React.Component {
                         disabled={this.props.pristine || this.props.submitting}>
                         Register
                     </button>
+                </div>
                 </form>
                 <p> or <Link to='/form/login'>login to your account</Link></p>
             </div>
