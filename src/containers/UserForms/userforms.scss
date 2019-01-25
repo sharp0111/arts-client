@@ -79,7 +79,21 @@ input{
 
     .login-form{
         display: flex;
+        justify-content: center;
+    }
+
+    .form-page{
+        display: flex;
+        justify-content: center;
+    }
+
+    .registration-form{
+        display: flex;
         justify-content: space-between;
+    }
+
+    .log-in p{
+        text-align: center;
     }
 
     .avatar{

@@ -56,7 +56,7 @@ export class RegistrationForm extends React.Component {
             <div className='user-form'>
                 <h2>Create an Account</h2>               
                 <form  
-                    className="login-form form-single"
+                    className="registration-form form-single"
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                     <div className='form-column'>
                         <AvatarUploadWrapper 
