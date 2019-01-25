@@ -11,6 +11,8 @@ const initialState = {
     city: null,
     state: null,
     zipcode: null,
+    email: null,
+    phone: null,
     resources: [],
 }
 
@@ -48,6 +50,8 @@ export default function user(state=initialState, action){
                 state: action.response.user.state,
                 zipcode: action.response.user.zipcode,
                 resources: action.response.user.resources,
+                email: action.response.user.email,
+                phone: action.response.user.phone,
             }
         }
         case actionTypes.LOGOUT_USER_REQUEST_SUCCESS: {

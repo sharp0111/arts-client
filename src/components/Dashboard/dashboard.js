@@ -8,7 +8,7 @@ import './dashboard.css';
 export default function Dashboard(props){
     return(
         <div className='dashboard'>
-            <Profile user={props.user}/>
+            <Profile user={props.user} phone={props.phone}/>
             <div>
                 <h3>Need Action</h3>
                 <NeedAction {...props} />
