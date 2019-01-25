@@ -65,11 +65,9 @@ export default class AvatarUploadWrapper extends React.Component{
     render(){
         let content = this.props.image ?
             <Avatar image={this.props.image}/> :
-            <div>
-                <Button onClick={this.uploadWidget} label='Choose profile image' type='button'/>
-            </div>
+            <Button onClick={this.uploadWidget} label='Choose profile image' type='button'/>
         return(
-            <div>
+            <div className='avatar-wrapper'>
                 {content}
             </div>
         )

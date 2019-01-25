@@ -20,8 +20,10 @@ export class RegistrationForm extends React.Component {
         super()
         this.state = {
             image: null,
+            st: null,
         }
         this.handleImage = this.handleImage.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleImage(data){
@@ -29,23 +31,30 @@ export class RegistrationForm extends React.Component {
         this.setState({image: data})
     }
 
+    handleChange(value){
+        console.log(value.value)
+        this.setState({st: value.value})
+    }
 
     onSubmit(values){
+        console.log(values)
         const {password, email, firstName, lastName, phone, address_1, address_2,
-            city, state, zipcode} = values;
+            city, zipcode} = values;
         const user = {password, email, firstName, lastName, phone, address_1, address_2,
-            city, state, zipcode};
+            city, zipcode};
+        user.avatar = this.state.image;
+        user.state = this.state.st;
+        console.log(this.state.st)
         console.log(user);
-        /*return this.props
-            .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(fetchUserLogin(username, password)));*/
+        return this.props.dispatch(registerUser(user))
+            .then(() => this.props.dispatch(fetchUserLogin(email, password)));
     }
 
     render(){
         return (
             <div className='registration'>
             <div className='user-form'>
-                <h2>Sign up for Rent Art Stuff</h2>               
+                <h2>Create an Account</h2>               
                 <form  
                     className="login-form form-single"
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
@@ -53,18 +62,29 @@ export class RegistrationForm extends React.Component {
                         handleImage={this.handleImage}
                         image={this.state.image}
                     />
+                    <div className='form-double'>
+                        <Field
+                            className='double-input'
+                            component={Input}
+                            type="text"
+                            label="First Name"
+                            name="firstName"
+                            validate={[required, nonEmpty, isTrimmed]}
+                        />
+                        <Field
+                            component={Input}
+                            className='double-input'
+                            type="text"
+                            label="Last name"
+                            name="lastName"
+                            validate={[required, nonEmpty, isTrimmed]}
+                        />
+                    </div>
                     <Field
                         component={Input}
                         type="text"
-                        label="First Name"
-                        name="firstName"
-                        validate={[required, nonEmpty, isTrimmed]}
-                    />
-                    <Field
-                        component={Input}
-                        type="text"
-                        label="Last name"
-                        name="lastName"
+                        label="Email"
+                        name="email"
                         validate={[required, nonEmpty, isTrimmed]}
                     />
                     <Field
@@ -85,27 +105,27 @@ export class RegistrationForm extends React.Component {
                         label="City"
                         name="city"
                     />
-                    <label>State</label>
-                    <Field
-                        component={SelectInput}
-                        type="text"
-                        label="State"
-                        name="state"
-                        options={state}
-                    />
-                    <Field
-                        component={Input}
-                        type="text"
-                        label="Zipcode"
-                        name="zipcode"
-                    />
-                    <Field
-                        component={Input}
-                        type="text"
-                        label="Email"
-                        name="email"
-                        validate={[required, nonEmpty, isTrimmed]}
-                    />
+                    <div className='form-double'>
+                        <div className=' select-input-double double-input'>
+                            <label>State</label>                
+                            <Field
+                                className='double-input'
+                                component={SelectInput}
+                                type="text"
+                                label="State"
+                                name="state"
+                                options={state}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+                        <Field
+                            className='double-input'
+                            component={Input}
+                            type="text"
+                            label="Zipcode"
+                            name="zipcode"
+                        />
+                    </div>
                     <Field
                         component={Input}
                         type="password"

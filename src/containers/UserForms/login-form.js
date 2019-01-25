@@ -9,7 +9,7 @@ import {fetchUserLogin} from '../../actions/index.actions';
 export class LoginForm extends React.Component {
     onSubmit(values) {
         console.log(values)
-        return this.props.dispatch(fetchUserLogin(values.username, values.password));
+        return this.props.dispatch(fetchUserLogin(values.email, values.password));
     }
 
     render(){
@@ -22,9 +22,9 @@ export class LoginForm extends React.Component {
                     <Field
                         component={Input}
                         type='text'
-                        label='Username'
-                        name='username'
-                        id='username'
+                        label='Email'
+                        name='email'
+                        id='email'
                         validate={[required, nonEmpty]}
                     />
                     <Field

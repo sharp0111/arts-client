@@ -1,0 +1,64 @@
+.registration{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-form{
+    width: 350px;
+    padding: 20px;
+}
+
+
+.user-form form{
+    margin-bottom: 20px;
+}
+
+.user-form h2{
+    text-align: center;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
+.form-double{
+    display: flex;
+    justify-content: space-between;
+}
+
+.double-input{
+    width: 150px;
+}
+
+.form-input label{
+    margin-bottom: 2px;
+}
+
+.select-input{
+    margin-bottom: 1rem;
+}
+
+.select-input label{
+    margin-bottom: 2px;
+}
+
+.avatar-wrapper{
+    min-height: 150px;
+    border: .3px solid black;
+    margin-bottom: 1rem; 
+}
+
+.select-input-double{
+    display: flex;
+    flex-direction: column;
+}
+
+#zipcode{
+    height: 54px;
+}
