@@ -20,20 +20,28 @@ export class DashboardWrapper extends React.Component{
             }
             else{ needAction.push({r})}
         }
-        console.log(needAction)
-        console.log(pendingApproval)
-        console.log(this.props.loggedIn)
+
         if(!this.props.loggedIn){
             return(
                 <Redirect to='form/login' />
             )
         }
+
+        const formattedPhone = []
+        if(this.props.user.phone){
+            formattedPhone.push(this.props.user.phone.slice(0,3))
+            formattedPhone.push(this.props.user.phone.slice(3,6))
+            formattedPhone.push(this.props.user.phone.slice(6,10))
+        }
+
         return(
             <div className="container profile-page">
                 <Dashboard 
                     action={needAction}
                     pending={pendingApproval}
                     userId ={this.props.user._id}
+                    user={this.props.user}
+                    phone={formattedPhone}
                />
             </div>
         )

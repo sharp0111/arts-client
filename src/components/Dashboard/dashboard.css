@@ -2,3 +2,31 @@
     margin-right: 40px;
     margin-left: 40px;
 }
+
+.profile-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-picture{
+    margin-right: 40px;
+}
+
+.profile-name{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.profile-picture .avatar{
+    justify-content: flex-start;
+}
+
+.profile-contact{
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 600px){
+    .profile-section{
+        flex-direction: row;
+    }
+}
