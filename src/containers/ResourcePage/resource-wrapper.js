@@ -53,7 +53,8 @@ export class ResourceWrapper extends React.Component{
         if(this.props.loaded){
             return(
                 <div>
-                    <DisplayResource 
+                    <DisplayResource
+                        preview={this.props.verified? null: <p>This is a preview. It will be added to the search page when approved</p>}
                         name={this.props.resource.name}
                         value={(this.props.resource.price_value/1000).toFixed([2])}
                         unit={this.props.resource.price_unit}
