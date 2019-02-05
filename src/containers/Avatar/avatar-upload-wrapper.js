@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../FormElements/button';
-import Avatar from '../Avatar/avatar';
+import Avatar from './avatar';
 
 export default class AvatarUploadWrapper extends React.Component{
     constructor(){
