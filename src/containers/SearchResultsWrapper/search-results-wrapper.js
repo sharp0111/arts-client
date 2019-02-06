@@ -69,8 +69,10 @@ export class SearchResultsWrapper extends React.Component{
                     unit={item.price_unit}
                     id={item._id}
                     category={item.category}
+                    verified={item.verified}
                 />
                 )
+            thumbnails=thumbnails.reverse();
             return(
                 <div className='container display-results'>
                     <div className='row'>

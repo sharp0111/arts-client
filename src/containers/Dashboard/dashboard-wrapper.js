@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import Dashboard from '../../components/Dashboard/dashboard';
 import {fetchUserBasicInfo} from '../../actions/user-actions';
-import DisplayResults from '../../components/DisplayResults/display-results';
 import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 
 export class DashboardWrapper extends React.Component{
@@ -48,7 +47,7 @@ export class DashboardWrapper extends React.Component{
                     verified={item.verified}
                 />
             )
-
+        thumbnails = thumbnails.reverse();
         return(
             <div className="container profile-page">
                 <Dashboard 
