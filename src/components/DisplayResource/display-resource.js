@@ -7,7 +7,7 @@ import ReviewsWrapper from '../../containers/Reviews/reviews-wrapper';
 import MakeReservationWrapper from '../../containers/Reservations/make-reservation-wrapper';
 
 export default function DisplayResource(props){
-    
+    console.log(props.verified)
     return(
         <Grid>
         <Row>

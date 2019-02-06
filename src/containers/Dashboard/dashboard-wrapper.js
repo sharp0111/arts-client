@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import Dashboard from '../../components/Dashboard/dashboard';
 import {fetchUserBasicInfo} from '../../actions/user-actions';
+import DisplayResults from '../../components/DisplayResults/display-results';
+import ResourceThumbnail from '../../components/DisplayResults/resource-thumbnail';
 
 export class DashboardWrapper extends React.Component{
 
@@ -34,6 +36,19 @@ export class DashboardWrapper extends React.Component{
             formattedPhone.push(this.props.user.phone.slice(6,10))
         }
 
+        let thumbnails = this.props.resources.map(item => 
+                <ResourceThumbnail
+                    imageUrl={(item.images.length > 0) ? item.images[0]: null}
+                    key={item._id}
+                    name={item.name}
+                    value={(item.price_value/1000).toFixed([2])}
+                    unit={item.price_unit}
+                    id={item._id}
+                    category={item.category}
+                    verified={item.verified}
+                />
+            )
+
         return(
             <div className="container profile-page">
                 <Dashboard 
@@ -42,6 +57,7 @@ export class DashboardWrapper extends React.Component{
                     userId ={this.props.user._id}
                     user={this.props.user}
                     phone={formattedPhone}
+                    thumbnails={thumbnails}
                />
             </div>
         )
@@ -51,8 +67,9 @@ export class DashboardWrapper extends React.Component{
 const mapStateToProps = state => ({
     loggedIn: state.user._id !== null,
     user: state.user,
+    resources: state.resources.thumbnails,
     pending: state.reservations.pending,
-    active: state.reservations.action,
+    active: state.reservations.active,
 })
 
 export default connect(mapStateToProps)(DashboardWrapper)
