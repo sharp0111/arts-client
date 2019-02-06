@@ -35,8 +35,12 @@ export class MakeReservationWrapper extends React.Component{
         })
     }
 
+
     render(){
         if(!this.props.loggedIn || !this.props.resource.verified){
+            return null;
+        }
+        if(this.props.owner===true){
             return null;
         }
         console.log(this.state.overlay)

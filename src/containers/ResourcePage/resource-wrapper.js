@@ -47,6 +47,9 @@ export class ResourceWrapper extends React.Component{
             this.filteredReviews.push(reviews[reviewNumber])            
         }
         console.log(this.filteredReviews)
+        if(this.props.userId === this.props.resource.hostId){
+            
+        }
     }
 
     render(){
@@ -68,6 +71,7 @@ export class ResourceWrapper extends React.Component{
                         state={this.props.resource.state}
                         images={this.props.resource.images.length > 0? this.props.resource.images : null}
                         reviews={this.filteredReviews}
+                        owner={this.props.owner}
                     />
                 </div>
             )
@@ -78,7 +82,8 @@ export class ResourceWrapper extends React.Component{
 
 const mapStateToProps = state => ({
     loaded: state.resources.selection._id !==undefined,
-    resource: state.resources.selection
+    resource: state.resources.selection,
+    owner: state.user._id === state.resources.selection.hostId,
 })
 
 export default connect(mapStateToProps)(ResourceWrapper)

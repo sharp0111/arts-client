@@ -26,7 +26,7 @@ export default function DisplayResource(props){
                     <p className='price-rate'><span>{props.value} </span> / <span> {props.unit}</span></p>
                     <p>{props.additional}</p>
                 </div>
-                <MakeReservationWrapper  />
+                <MakeReservationWrapper owner={props.owner}/>
             </Col>
         </Row>
         <Row>
