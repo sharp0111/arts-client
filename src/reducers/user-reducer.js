@@ -19,7 +19,6 @@ const initialState = {
 export default function user(state=initialState, action){
     switch(action.type){
         case actionTypes.FETCH_USER_LOGIN_REQUEST_SUCCESS: {
-            console.log(action.response)
             return{
                 ...state,
                 token: action.response.token,
@@ -36,8 +35,6 @@ export default function user(state=initialState, action){
             }
         }
         case actionTypes.FETCH_USER_BASIC_INFO_REQUEST_SUCCESS: {
-            console.log(action.response)
-            console.log(action.response.user.resources)
             return{
                 ...state,
                 thumbnails: action.response.user.resources,

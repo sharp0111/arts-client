@@ -1,9 +1,7 @@
 import React from 'react';
-import Input from '../FormElements/input';
-import {Field, reduxForm} from 'redux-form';
+import {reduxForm} from 'redux-form';
 import ImageUploadWrapper from '../ImageUpload/image-upload-wrapper';
-import {required, nonEmpty} from '../../validators';
-
+//import {required, nonEmpty} from '../../validators';
 
 const ImageSection = props => {
     const {handleSubmit, previousPage} = props;

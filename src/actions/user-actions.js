@@ -7,7 +7,6 @@ export const FETCH_USER_SIGNUP_REQUEST_FAILURE = 'FETCH_USER_SIGNUP_REQUEST_FAIL
 export const CREATE_USER_REQUEST_SUCCESS = 'CREATE_USER_REQUEST_SUCCESS';
 
 export function registerUser(user) {
-    console.log('register')
     const promise = fetch(`${config.API_BASE_URL}/user`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -26,7 +25,6 @@ export const FETCH_USER_LOGIN_REQUEST_SUCCESS = 'FETCH_USER_LOGIN_REQUEST_SUCCES
 export const FETCH_USER_LOGIN_REQUEST_FAILURE = 'FETCH_USER_LOGIN_REQUEST_FAILURE';
 
 export function fetchUserLogin(email, password) {
-    console.log('fetch user login');
   const promise = fetch(`${config.API_BASE_URL}/user/login`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -55,8 +53,7 @@ export const LOGOUT_USER_REQUEST_TRIGGERED = 'LOGOUT_USER_REQUEST_TRIGGERED'
 export const LOGOUT_USER_REQUEST_SUCCESS = 'LOGOUT_USER_REQUEST_SUCESS'
 export const LOGOUT_USER_REQUEST_FAILURE = 'LOGOUT_USER_REQUEST_FAILURE'
 
-export function logoutUserRequest(){
-    console.log('log out user request')    
+export function logoutUserRequest(){   
     return {
         type: LOGOUT_USER_REQUEST_SUCCESS,
     }
@@ -67,7 +64,6 @@ export const FETCH_USER_BASIC_INFO_REQUEST_SUCCESS = 'FETCH_USER_BASIC_INFO_REQU
 export const FETCH_USER_BASIC_INFO_REQUEST_FAILURE = 'FETCH_USER_BASIC_INFO_REQUEST_FAILURE';
 
 export function fetchUserBasicInfo(token) {
-    console.log('fetch user basic info')
     const promise = fetch(`${config.API_BASE_URL}/user/protected`, {
         headers: {
             'Content-Type': 'application/json',

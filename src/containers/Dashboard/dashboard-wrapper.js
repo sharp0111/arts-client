@@ -11,26 +11,34 @@ export class DashboardWrapper extends React.Component{
         this.props.dispatch(fetchUserBasicInfo(this.props.user.token))
     }
 
-    checkDate = () => {
-
+    getDate = () => {
+        let currentDate = new Date();
+        let currentMonth = currentDate.getMonth() + 1;
+        let currentDay = currentDate.getDate();
+        let currentYear = currentDate.getFullYear();
+        let currentDateText = `${currentMonth}/${currentDay}/${currentYear}`
+        console.log(currentDateText);
+        return currentDateText
     }
 
     render(){
         const needAction = []
-        const pendingApproval = []
         /*let resv = this.props.pending
         for(let r of resv){
             if(r.guestId === this.props.user._id && !this.props.pending.invoiceSent){
                 pendingApproval.push({r})
             }
             else{ needAction.push({r})}
-        }
+        }*/
+
+        let currentDateText = this.getDate;
+        console.log(currentDateText);
 
         if(!this.props.loggedIn){
             return(
                 <Redirect to='form/login' />
             )
-        }*/
+        }
 
         const formattedPhone = []
         if(this.props.user.phone){

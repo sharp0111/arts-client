@@ -14,7 +14,6 @@ export default class AvatarUploadWrapper extends React.Component{
 
     uploadWidget(){
         let _this = this;
-        let imageData;
         window.cloudinary.openUploadWidget(
             {    
                 cloud_name: "arts-connective",    
