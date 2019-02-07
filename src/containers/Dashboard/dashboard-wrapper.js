@@ -11,10 +11,14 @@ export class DashboardWrapper extends React.Component{
         this.props.dispatch(fetchUserBasicInfo(this.props.user.token))
     }
 
+    checkDate = () => {
+
+    }
+
     render(){
         const needAction = []
         const pendingApproval = []
-        let resv = this.props.pending
+        /*let resv = this.props.pending
         for(let r of resv){
             if(r.guestId === this.props.user._id && !this.props.pending.invoiceSent){
                 pendingApproval.push({r})
@@ -26,7 +30,7 @@ export class DashboardWrapper extends React.Component{
             return(
                 <Redirect to='form/login' />
             )
-        }
+        }*/
 
         const formattedPhone = []
         if(this.props.user.phone){
@@ -52,7 +56,7 @@ export class DashboardWrapper extends React.Component{
             <div className="container profile-page">
                 <Dashboard 
                     action={needAction}
-                    pending={pendingApproval}
+                    pending={this.props.pending}
                     userId ={this.props.user._id}
                     user={this.props.user}
                     phone={formattedPhone}

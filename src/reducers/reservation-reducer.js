@@ -20,7 +20,7 @@ export default function reservation(state=initialState, action){
             const activeRes = []
             console.log(action.response.user.reservations)
             for(let i=0; i<action.response.user.reservations.length; i++){
-                if(!action.response.user.reservations[i].booked){
+                if(action.response.user.reservations[i].status < 3){
                     console.log('pending')
                     pendingRes.push(action.response.user.reservations[i])
                 }

@@ -14,7 +14,15 @@ export default function Dashboard(props){
             </Row>
             <Row>
                 <h3>Need Action</h3>
+            </Row>
+            <Row>
                 <NeedAction {...props} />
+            </Row>
+            <Row>
+                <h3>Pending</h3>
+            </Row>
+            <Row>
+                <Pending {...props} />
             </Row>
             <Row>
                 <h3>My Reservations</h3>
