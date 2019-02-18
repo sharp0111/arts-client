@@ -17,12 +17,13 @@ export class DashboardWrapper extends React.Component{
         let currentDay = currentDate.getDate();
         let currentYear = currentDate.getFullYear();
         let currentDateText = `${currentMonth}/${currentDay}/${currentYear}`
-        console.log(currentDateText);
-        return currentDateText
+        let currentDateStandard = Date.parse(currentDateText)
+        return currentDateStandard
     }
 
     render(){
-        const needAction = []
+        const needReview = []
+        const upcoming = []
         /*let resv = this.props.pending
         for(let r of resv){
             if(r.guestId === this.props.user._id && !this.props.pending.invoiceSent){
@@ -31,8 +32,21 @@ export class DashboardWrapper extends React.Component{
             else{ needAction.push({r})}
         }*/
 
-        let currentDateText = this.getDate;
-        console.log(currentDateText);
+        let currentDateStandard = this.getDate();
+        console.log(currentDateStandard);
+
+        let reservations = this.props.active
+        for (let resv of reservations){
+            let reservationDateStandard = Date.parse(resv.start_date)
+            if (currentDateStandard > reservationDateStandard){
+                upcoming.push(resv)
+            }else{
+                needReview.push(resv)
+            }
+        }
+
+        console.log(upcoming);
+        console.log(needReview);
 
         if(!this.props.loggedIn){
             return(
@@ -63,12 +77,13 @@ export class DashboardWrapper extends React.Component{
         return(
             <div className="container profile-page">
                 <Dashboard 
-                    action={needAction}
                     pending={this.props.pending}
                     userId ={this.props.user._id}
                     user={this.props.user}
                     phone={formattedPhone}
                     thumbnails={thumbnails}
+                    action={this.needReview}
+                    upcoming={this.upcoming}
                />
             </div>
         )
