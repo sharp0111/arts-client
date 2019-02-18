@@ -1,3 +1,7 @@
+.single-reservation{
+    margin-bottom: 30px;
+}
+
 .resv-name{
     margin-right: 40px;
     margin-left: 40px;
@@ -23,6 +27,25 @@
 
 .profile-contact{
     margin-bottom: 0;
+}
+
+.add-resource-link{
+    margin: 20px;
+    width: 200px;
+    height: 140px;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,.2);
+    padding: 20px;
+}
+
+.add-resource-link a{
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.display-listings{
+    margin-left: -20px;
 }
 
 @media only screen and (min-width: 600px){

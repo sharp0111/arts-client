@@ -1,5 +1,4 @@
 import config from '../config'
-import {push} from 'connected-react-router';
 
 export const CREATE_RESERVATION_REQUEST_TRIGGERED = 'CREATE_RESERVATION_REQUEST_TRIGGERED';
 export const CREATE_RESERVATION_REQUEST_SUCCESS = 'CREATE_RESERVATION_REQUEST_SUCCESS';

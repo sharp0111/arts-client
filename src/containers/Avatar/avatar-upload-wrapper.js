@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../FormElements/button';
-import Avatar from '../Avatar/avatar';
+import Avatar from './avatar';
 
 export default class AvatarUploadWrapper extends React.Component{
     constructor(){
@@ -14,7 +14,6 @@ export default class AvatarUploadWrapper extends React.Component{
 
     uploadWidget(){
         let _this = this;
-        let imageData;
         window.cloudinary.openUploadWidget(
             {    
                 cloud_name: "arts-connective",    

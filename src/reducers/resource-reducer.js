@@ -21,7 +21,6 @@ export default function resource(state=initialState, action){
             }
         }
         case actionTypes.CREATE_RESOURCE_REQUEST_SUCCESS: {
-            console.log(action.response)
             return{
                 ...state,
                 selection: action.response,
@@ -29,22 +28,18 @@ export default function resource(state=initialState, action){
             }
         }
         case actionTypes.FETCH_RESOURCE_SUCCESS: {
-            console.log(action.response)
             return{
                 ...state,
                 selection: action.response
             }
         }
         case actionTypes.HANDLE_UPLOADED_IMAGE: {
-            console.log(action.image)
             return{
                 ...state,
                 images: action.image
             }
         }
         case actionTypes.FETCH_USER_BASIC_INFO_REQUEST_SUCCESS: {
-            console.log(action.response)
-            console.log(action.response.user.resources)
             return{
                 ...state,
                 thumbnails: action.response.user.resources,

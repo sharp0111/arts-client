@@ -5,7 +5,7 @@ import Input from '../FormElements/input';
 import SelectInput from '../FormElements/select-input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 import {Link} from 'react-router-dom';
-import AvatarUploadWrapper from './avatar-upload-wrapper';
+import AvatarUploadWrapper from '../Avatar/avatar-upload-wrapper';
 import './userforms.scss';
 
 const passwordLength = length({min: 10, max: 72});
@@ -56,7 +56,7 @@ export class RegistrationForm extends React.Component {
             <div className='user-form'>
                 <h2>Create an Account</h2>               
                 <form  
-                    className="registration-form form-single"
+                    className='registration-form form-single'
                     onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                     <div className='form-column'>
                         <AvatarUploadWrapper 

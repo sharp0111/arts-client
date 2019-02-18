@@ -9,6 +9,10 @@ export default function ResourceThumbnail(props){
         <Link to={`/resource/selected/?id=${props.id}`}>
             <div className='resource-thumbnail' xs={12} sm={6} md={4} lg={4}>
                 <div className='thumbnail-image'>
+                    {props.verified? null: 
+                        <div className='pending-verification'>
+                            <p>Pending</p>
+                        </div>}
                     {props.imageUrl? (<Image cloudName='arts-connective' publicId={props.imageUrl} height='250' width='300'/>) : null}
                 </div>
                 <div className='thumbnail-info'>

@@ -1,8 +1,7 @@
 import React from 'react';
-import Input from '../FormElements/input';
 import TextArea from '../FormElements/textarea';
 import {Field, reduxForm} from 'redux-form';
-import {required, nonEmpty} from '../../validators';
+//import {required, nonEmpty} from '../../validators';
 
 
 const DescriptionSection = props => {

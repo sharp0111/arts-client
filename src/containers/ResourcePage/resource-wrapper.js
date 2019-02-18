@@ -47,13 +47,17 @@ export class ResourceWrapper extends React.Component{
             this.filteredReviews.push(reviews[reviewNumber])            
         }
         console.log(this.filteredReviews)
+        if(this.props.userId === this.props.resource.hostId){
+            
+        }
     }
 
     render(){
         if(this.props.loaded){
             return(
                 <div>
-                    <DisplayResource 
+                    <DisplayResource
+                        verified={this.props.resource.verified}
                         name={this.props.resource.name}
                         value={(this.props.resource.price_value/1000).toFixed([2])}
                         unit={this.props.resource.price_unit}
@@ -67,6 +71,7 @@ export class ResourceWrapper extends React.Component{
                         state={this.props.resource.state}
                         images={this.props.resource.images.length > 0? this.props.resource.images : null}
                         reviews={this.filteredReviews}
+                        owner={this.props.owner}
                     />
                 </div>
             )
@@ -77,7 +82,8 @@ export class ResourceWrapper extends React.Component{
 
 const mapStateToProps = state => ({
     loaded: state.resources.selection._id !==undefined,
-    resource: state.resources.selection
+    resource: state.resources.selection,
+    owner: state.user._id === state.resources.selection.hostId,
 })
 
 export default connect(mapStateToProps)(ResourceWrapper)

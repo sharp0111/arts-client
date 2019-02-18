@@ -5,13 +5,14 @@ export default class Pending extends React.Component{
     render(){
         const pendingResv = []
         for(let i=0; i<this.props.pending.length; i++){
-            pendingResv.push(
-                <Reservation 
-                    key={this.props.pending[i].r._id}
-                    {...this.props.pending[i]}
-                    name={this.props.pending[i].r._id}
-                />
-            )
+            if(this.props.pending[i].guestId === this.props.userId){
+                pendingResv.push(
+                    <Reservation 
+                        key={this.props.pending[i]._id}
+                        {...this.props.pending[i]}
+                    />
+                )
+            }
         }
         return(
             <div>
