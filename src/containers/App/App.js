@@ -17,7 +17,7 @@ class App extends React.Component {
           <Switch>
               <Route exact path='/' component={LandingPage} />
               <Route path='/search' component={SearchPage} />
-              <Route path='/resource' component={ResourcePage} />
+              <Route path='/resource/:id' component={ResourcePage} />
               <Route path='/dashboard' component={DashboardWrapper} />
               <Route path='/form' component={FormPage} />
             </Switch>

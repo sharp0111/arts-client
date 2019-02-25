@@ -27,6 +27,7 @@ export class ResourcePage extends React.Component{
     }
 
     render(){
+        console.log(this.props.match.url)
         return(
             <div>
                 <ResourceWrapper />
