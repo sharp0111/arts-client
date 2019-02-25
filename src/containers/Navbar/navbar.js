@@ -2,9 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import Media from 'react-media';
 import Search from '../Search/search';
 import {logoutUserRequest} from '../../actions/user-actions';
-
+import './navbar.scss';
 
 export class Navigation extends React.Component{
 
@@ -22,12 +23,6 @@ export class Navigation extends React.Component{
                 <NavItem eventKey={2} href='/form/register' className='nav-link'>
                     Register
                 </NavItem>
-                <Search 
-                    placeholder='Search'
-                    key='navbar'
-                    form='navbar-search'
-                    formKey='navbar-search'
-                />
             </Nav>
         
         const loggedInNav = 
@@ -38,24 +33,33 @@ export class Navigation extends React.Component{
                 <NavItem eventKey={2} href='/dashboard' className='nav-link'>
                     Dashboard
                 </NavItem>
-                <Search 
-                    placeholder='Search'
-                    key='navbar'
-                    form='navbar-search'
-                    formKey='navbar-search'
-                />
-        </Nav>
+            </Nav>
 
         const logNav = this.props.loggedIn? loggedInNav : loggedOutNav;
 
         return(
-            <Navbar className='bg-dark' fluid={true}>
-                <Navbar.Brand>
-                <Link to='/' className='navbar-brand' href=''>
-                    <img src={require("./logo-white.png")} width="150" height="40" alt="logo for arts connective" />
-                </Link>
-                </Navbar.Brand>
-                {logNav}
+            <Navbar fluid={true}>
+                <div className='top-nav'>
+                    <div className='left-nav'>
+                        <Navbar.Brand>
+                            <Link to='/' className='navbar-brand' href=''>
+                                <img src={require("../../assets/logo.png")} width="150" height="40" alt="logo for arts connective" />
+                            </Link>
+                        </Navbar.Brand>
+                        <Search 
+                            placeholder='Search'
+                            key='navbar'
+                            form='navbar-search'
+                            formKey='navbar-search'
+                        />
+                    </div>
+                    <div className='profile'>
+
+                    </div>
+                </div>
+                <div className='bottom-nav'>
+                    {logNav}
+                </div>
             </Navbar>
         )
     }
