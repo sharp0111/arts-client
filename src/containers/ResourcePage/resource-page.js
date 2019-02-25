@@ -8,7 +8,6 @@ export class ResourcePage extends React.Component{
 
     componentDidMount(){
         let id = this.getQueryVariable('id')
-        console.log(id)
         if(id){
             this.props.dispatch(fetchResource(id))
         }
@@ -27,7 +26,6 @@ export class ResourcePage extends React.Component{
     }
 
     render(){
-        console.log(this.props.match.url)
         return(
             <div>
                 <ResourceWrapper />
@@ -40,4 +38,4 @@ const mapStateToProps = state => ({
     resource: state.resources.selection
 })
 
-export default connect(mapStateToProps)(ResourceWrapper)
+export default connect(mapStateToProps)(ResourcePage)

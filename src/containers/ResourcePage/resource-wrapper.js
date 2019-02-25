@@ -46,13 +46,10 @@ export class ResourceWrapper extends React.Component{
             let reviewNumber = Math.floor(Math.random()*numOfReviews)
             this.filteredReviews.push(reviews[reviewNumber])            
         }
-        console.log(this.filteredReviews)
-        if(this.props.userId === this.props.resource.hostId){
-            
-        }
     }
 
     render(){
+        console.log(this.props.match)
         if(this.props.loaded){
             return(
                 <div>
