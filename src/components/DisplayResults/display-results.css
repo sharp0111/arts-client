@@ -66,6 +66,9 @@
     width: 15px;
     border-radius: 50%;
     margin-right: 5px;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
 }
 
 .category-display{
