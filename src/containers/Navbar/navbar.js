@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import Media from 'react-media';
 import Search from '../Search/search';
+import Avatar from '../../containers/Avatar/avatar';
 import {logoutUserRequest} from '../../actions/user-actions';
 import './navbar.scss';
 
@@ -70,7 +71,14 @@ export class Navigation extends React.Component{
         </Media>
 
         const logNav = this.props.loggedIn? loggedInNav : loggedOutNav;
-        const profile = this.props.loggedIn? <div className='profile'></div> : null;
+        const profile = this.props.loggedIn?
+         <div className='profile'>
+             <Avatar
+                image={this.props.avatar}
+                width='50'
+                height='50'
+            />
+         </div> : null;
         return(
             <Navbar fluid={true} className={this.props.home? 'homepage' : 'otherpage'}>
                 <div className='top-nav'>
@@ -92,6 +100,7 @@ export class Navigation extends React.Component{
 
 const mapStateToProps = state => ({
     loggedIn: state.user._id !==null,
+    avatar: state.user.avatar
 })
 
 export default connect(mapStateToProps)(Navigation)
