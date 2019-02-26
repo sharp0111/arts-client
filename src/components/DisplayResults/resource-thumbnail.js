@@ -3,22 +3,27 @@ import DisplayCategories from '../Display/display-categories';
 import {Image} from 'cloudinary-react';
 import {Link} from 'react-router-dom';
 import {Col} from 'react-bootstrap';
+import StarRating from '../Display/star-rating';
 
 export default function ResourceThumbnail(props){
+    let stars = (Math.random()*4)
     return(
         <Link to={`/resource/?id=${props.id}`}>
-            <div className='resource-thumbnail' xs={12} sm={6} md={4} lg={4}>
+            <div className='resource-thumbnail'>
                 <div className='thumbnail-image'>
+                    <DisplayCategories {...props} />
                     {props.verified? null: 
                         <div className='pending-verification'>
                             <p>Pending</p>
                         </div>}
-                    {props.imageUrl? (<Image cloudName='arts-connective' publicId={props.imageUrl} height='250' width='300'/>) : null}
+                    {props.imageUrl? (<Image cloudName='arts-connective' publicId={props.imageUrl} height='200' width='300'/>) : null}
                 </div>
                 <div className='thumbnail-info'>
-                    <DisplayCategories {...props} />
+                    <StarRating stars={stars} />
                     <h5>{props.name}</h5>
-                    <p>${props.value} / {props.unit}</p>
+                    <p className='thumbnail-rate'>
+                        <span className='thumbnail-price'>${props.value}</span> 
+                        /{props.unit}</p>
                 </div>
             </div>
         </Link>

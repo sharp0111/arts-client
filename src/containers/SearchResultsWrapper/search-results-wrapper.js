@@ -15,28 +15,22 @@ export class SearchResultsWrapper extends React.Component{
     }
 
     handleCategory = (input) => {
-        console.log(input.value)
         this.setState({
             category: input.value
         })
     }
 
     handleType = (input) => {
-        console.log(input.value)
         this.setState({
             type: input.value
         })
     }
 
     filterResources = (resources) => {
-        console.log(resources)
         const filteredResources = [];
         resources.forEach(resource => {
-            console.log(resource.category)
             if(resource.category.includes(this.state.category) && resource.type.includes(this.state.type)){
-                console.log(true)
                 filteredResources.push(resource)
-                console.log(filteredResources);
             }
             else if(resource.category.includes(this.state.category) && this.state.type===null){
                 filteredResources.push(resource)
@@ -59,7 +53,6 @@ export class SearchResultsWrapper extends React.Component{
         if(this.props.resources){
             let allResources = this.props.resources
             let filteredResources = this.filterResources(allResources)
-            console.log(filteredResources);
             let thumbnails = filteredResources.map(item =>
                 <ResourceThumbnail
                     imageUrl={(item.images.length > 0) ? item.images[0]: null}
@@ -74,7 +67,7 @@ export class SearchResultsWrapper extends React.Component{
                 )
             thumbnails=thumbnails.reverse();
             return(
-                <div className='container display-results'>
+                <div className=' display-results'>
                     <div className='row'>
                         <div className='results-filter-section col-md-3'>
                             <FilterResults 
