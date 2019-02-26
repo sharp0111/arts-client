@@ -5,7 +5,7 @@
 
 .filter-form label{
     margin-top: 15px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .same-line-section{
@@ -73,5 +73,9 @@
 @media only screen and (max-width: 450px){
     .rate{
         margin-right: 0;
+    }
+
+    .filter-form label{
+        margin-bottom: 8px;
     }
 }
