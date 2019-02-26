@@ -15,6 +15,7 @@ export class Navigation extends React.Component{
     }
 
     render(){
+        console.log(this.props.home)
         const logo = 
             <Media query = '(max-width: 765px)'>
                 {matches =>
@@ -71,7 +72,7 @@ export class Navigation extends React.Component{
         const logNav = this.props.loggedIn? loggedInNav : loggedOutNav;
         const profile = this.props.loggedIn? <div className='profile'></div> : null;
         return(
-            <Navbar fluid={true}>
+            <Navbar fluid={true} className={this.props.home? 'homepage' : 'otherpage'}>
                 <div className='top-nav'>
                     <div className='left-nav'>
                         <Navbar.Brand>

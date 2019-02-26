@@ -7,8 +7,11 @@
     background-size: cover;
     background-position: center;
     height: 60vh;
-    padding-top: 100px;
+    padding-top: 200px;
     margin-bottom: 5vh;
+    margin-top: -150px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .jumbotron-search{

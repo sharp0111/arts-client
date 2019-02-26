@@ -85,6 +85,10 @@ $colors: (
     text-decoration: none;
   }
 
-  .navbar-nav{
-    flex-direction: row;
+
+  @media only screen and (min-width: 765px){
+
+    main{
+      margin-top: 150px;
+    }
   }

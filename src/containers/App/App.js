@@ -9,13 +9,32 @@ import Navigation from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      home: true
+    }
+  }
+
+  setHome = () => {
+    this.setState({
+      home: true
+    })
+  }
+
+  removeHome = () => {
+    this.setState({
+      home:false
+    })
+  }
+
   render() {
     return (
       <div className="App">
-          <Navigation />
+          <Navigation home={this.state.home}/>
           <main role="main">
           <Switch>
-              <Route exact path='/' component={LandingPage} />
+              <Route exact path='/' render = {(props) => <LandingPage setHome={this.setHome} removeHome={this.removeHome}/>} />
               <Route path='/search' component={SearchPage} />
               <Route path='/resource' component={ResourcePage} />
               <Route path='/dashboard' component={DashboardWrapper} />

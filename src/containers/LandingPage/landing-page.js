@@ -11,6 +11,14 @@ export default class LandingPage extends React.Component{
         }
     }
 
+  componentDidMount(){
+      this.props.setHome()
+  }
+
+  componentWillUnmount(){
+        this.props.removeHome()
+  }
+
     //this worked better with display: none Let's fix that
     handleOnHover = (e) => {
         console.log(e.target.id)
