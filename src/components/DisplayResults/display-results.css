@@ -129,13 +129,18 @@
     }
 
     .display-results{
-        max-width: 1000px;
+        width: 700px;
     }
+}
 
+@media only screen and (min-width: 1000px){
+    .display-results{
+        width: 1000px;
+     }
 }
 
 @media only screen and (min-width: 1500px){
     .display-results{
-        max-width: 1400px;
+       width: 1400px;
     }
 }
