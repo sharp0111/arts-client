@@ -67,7 +67,7 @@ export class SearchResultsWrapper extends React.Component{
                 )
             thumbnails=thumbnails.reverse();
             return(
-                <div className=' display-results'>
+                <div className='display-results'>
                     <div className='row'>
                         <div className='results-filter-section col-md-3'>
                             <FilterResults 
