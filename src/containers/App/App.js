@@ -31,6 +31,7 @@ export class App extends React.Component {
   }
 
   render() {
+    console.log(this.props.appState);
     return (
       <div className="App">
           <Navigation home={this.state.home}/>
@@ -42,7 +43,7 @@ export class App extends React.Component {
                   message={this.props.appState.serverErrorMessage.message}
                 />
               </div>
-              }
+              } 
           <Switch>
               <Route exact path='/' render = {(props) => <LandingPage setHome={this.setHome} removeHome={this.removeHome}/>} />
               <Route path='/search' component={SearchPage} />
