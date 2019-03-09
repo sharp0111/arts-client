@@ -9,43 +9,33 @@
     position: relative;
 }
 
-.border-left, .border-right{
-    position: absolute;
-    height: 4px;
-    background-color: #3a71a6;
-    top: -2px;
-    z-index: 5;
-}
-
-.border-left{
-    margin-left: -40px;
-    width: 135px;
-}
-
-.border-right{
-    margin-left: 310px;
-    width: 100%;
-}
-
 .jumbotron.sewing{
     background-image: url('https://static.wixstatic.com/media/591c392b8ecd50d325e1041d0411bc94.jpg/v1/fill/w_1140,h_605,al_c,q_85,usm_0.66_1.00_0.01/Sewing%20Studio.webp');
 }
 
-.jumbotron-search{
-    width: 300px;
-    margin: 0 auto;
+.cartoon-wrapper{
+    height: 500px;
+    position: relative;
 }
 
-h4, h1{
-    color: white;
-    text-align: center;
+.intro-section{
+    position: relative;
 }
 
-h1, h2{
-
-    margin-bottom: 20px;
+.cartoon-image{
+    position: absolute;
+    top: -30%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
 }
 
+.cartoon-image.sewing{
+    background-image: url('../../assets/person-sewing.png');
+}
+
+/*Move to wherever we put this stuff */
 .video-wrapper{
     width: 100%;
 }

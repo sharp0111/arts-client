@@ -95,7 +95,7 @@ export class Navigation extends React.Component{
                     <NavItem eventKey={1} href='/' className='nav-link'>
                         Home
                     </NavItem>
-                    <NavItem eventKey={2} href='/' className='nav-link'>
+                    <NavItem eventKey={2} href='/info/faq' className='nav-link'>
                         FAQ
                     </NavItem>
                     <NavItem eventKey={3} href='/search' className='nav-link'>
@@ -106,6 +106,8 @@ export class Navigation extends React.Component{
                     </NavItem>
                 </Nav>
                 {profile}
+                <div className="border-left"></div>
+                <div className="border-right"></div>   
             </Navbar>
         )
     }

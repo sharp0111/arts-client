@@ -6,6 +6,7 @@ import SearchPage from '../SearchPage/search-page';
 import ResourcePage from '../ResourcePage/resource-page';
 import DashboardWrapper from '../Dashboard/dashboard-wrapper';
 import FormPage from '../FormPage/form-page';
+import InfoPage from '../InfoPage/info-page';
 import Navigation from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import Alert from '../Alert/alert';
@@ -50,6 +51,7 @@ export class App extends React.Component {
               <Route path='/resource' component={ResourcePage} />
               <Route path='/dashboard' component={DashboardWrapper} />
               <Route path='/form' component={FormPage} />
+              <Route path='/info' component={InfoPage} />
             </Switch>
           </main>
       </div>

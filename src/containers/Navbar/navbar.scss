@@ -55,6 +55,24 @@
         color: #925eae;
     }
 
+    .border-left, .border-right{
+        position: absolute;
+        height: 4px;
+        background-color: #3a71a6;
+        bottom: -2px;
+        z-index: 5;
+    }
+    
+    .border-left{
+        margin-left: -40px;
+        width: 135px;
+    }
+    
+    .border-right{
+        margin-left: 310px;
+        width: 100%;
+    }
+
 @media only screen and (min-width: 765px){
 
     .navbar-nav{
