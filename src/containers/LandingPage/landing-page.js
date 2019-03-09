@@ -8,6 +8,7 @@ export default class LandingPage extends React.Component{
         super(props)
         this.state = {
             color: 'full',
+            image: 'sewing',
         }
     }
 
@@ -49,6 +50,7 @@ export default class LandingPage extends React.Component{
                     listHover={this.handleOnHover}
                     listLeave={this.handleOnLeave}
                     colorimage={this.state.color}
+                    image={this.state.image}
                 />
             </div>
         )

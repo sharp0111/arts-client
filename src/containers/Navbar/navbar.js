@@ -101,7 +101,7 @@ export class Navigation extends React.Component{
                     <NavItem eventKey={3} href='/search' className='nav-link'>
                         Get Stuff
                     </NavItem>
-                    <NavItem eventKey={2} href='/' className='nav-link'>
+                    <NavItem eventKey={2} href='/form/resource' className='nav-link'>
                         Provide Stuff
                     </NavItem>
                 </Nav>

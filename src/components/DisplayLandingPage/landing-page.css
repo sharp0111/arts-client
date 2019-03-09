@@ -2,7 +2,6 @@
     background-size: cover;
     background-position: center;
     height: 40vh;
-    margin-bottom: 5vh;
     margin-left: -20px;
     margin-right: -20px;
     border-bottom: solid 4px #3a71a6;
@@ -33,6 +32,30 @@
 
 .cartoon-image.sewing{
     background-image: url('../../assets/person-sewing.png');
+}
+
+.info{
+    padding-left: 50px;
+}
+
+.info .search-box input{
+    width: 80%;
+    margin:20px auto;
+    height: 60px;
+    border: 4px solid #cd537b;
+    background-image: url('../../assets/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.info p{
+    text-align: center;
+    font-size: 18px;
+}
+
+h2{
+    text-align: center;
 }
 
 /*Move to wherever we put this stuff */
