@@ -9,20 +9,18 @@ import './landing-page.css';
 export default function DisplayLandingPage(props){
     return(
         <div className='landing-page'>
-            <Jumbotron>
-                <h1 className='header-text'>Arts Connective</h1>
-                <div className='jumbotron-search'>
-                    <h4 className='header-text'>What do you need?</h4>
-                    <Search 
+            <Jumbotron className="sewing"> 
+                <div className="border-left"></div>
+                <div className="border-right"></div>           
+            </Jumbotron>
+            <Grid>
+                <h2>What is Arts Connective?</h2>
+                <Search 
                         placeholder='e.g. dance studio'
                         key='landing'
                         form='landing-search'
                         formKey='landing-search'
                     />
-                </div>                
-            </Jumbotron>
-            <Grid>
-                <h2>What is Arts Connective?</h2>
                 <Row className='about-section'>
 
                     <Col className='about-video' xs={12} md={6}>

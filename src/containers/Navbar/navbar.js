@@ -9,6 +9,12 @@ import {logoutUserRequest} from '../../actions/user-actions';
 import './navbar.scss';
 
 export class Navigation extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            profile_menu: false,
+        }
+    }
 
     handleLogOut = () => {
         console.log('log out')
@@ -17,13 +23,13 @@ export class Navigation extends React.Component{
 
     render(){
         console.log(this.props.home)
-        const logo = 
+        /*const logo = 
             <Media query = '(max-width: 765px)'>
                 {matches =>
                     matches? <img src={require("../../assets/icon.png")} width="40" height="40" alt="logo for arts connective" /> :
                     <img src={require("../../assets/logo.png")} width="150" height="40" alt="logo for arts connective" />
                 }
-            </Media>
+            </Media>*/
         
         const search = 
             <Media query = '(max-width: 765px)'>
@@ -81,18 +87,25 @@ export class Navigation extends React.Component{
          </div> : null;
         return(
             <Navbar fluid={true} className={this.props.home? 'homepage' : 'otherpage'}>
-                <div className='top-nav'>
-                    <div className='left-nav'>
-                        <Navbar.Brand>
-                            <Link to='/' className='navbar-brand' href=''>
-                                {logo}
-                            </Link>
-                        </Navbar.Brand>
-                        {search}
-                    </div>
-                    {profile}
-                </div>
-                {lower}
+                <Navbar.Brand>
+                    <Link to='/' className='navbar-brand' href=''>
+                    </Link>
+                </Navbar.Brand>
+                <Nav className='center-links'>
+                    <NavItem eventKey={1} href='/' className='nav-link'>
+                        Home
+                    </NavItem>
+                    <NavItem eventKey={2} href='/' className='nav-link'>
+                        FAQ
+                    </NavItem>
+                    <NavItem eventKey={3} href='/search' className='nav-link'>
+                        Get Stuff
+                    </NavItem>
+                    <NavItem eventKey={2} href='/' className='nav-link'>
+                        Provide Stuff
+                    </NavItem>
+                </Nav>
+                {profile}
             </Navbar>
         )
     }
