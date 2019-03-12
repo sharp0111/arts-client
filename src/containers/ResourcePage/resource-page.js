@@ -1,19 +1,41 @@
 import React from 'react';
-import{Switch, Route} from 'react-router-dom';
-import SelectedResourceWrapper from './selected-resource-wrapper';
-import CreatedResourceWrapper from './created-resource-wrapper';
+import {connect} from 'react-redux';
 import ResourceWrapper from './resource-wrapper';
 
-export default class ResourcePage extends React.Component{
-    render(){
+import {fetchResource} from '../../actions/index.actions';
 
+export class ResourcePage extends React.Component{
+
+    componentDidMount(){
+        let id = this.getQueryVariable('id')
+        if(id){
+            this.props.dispatch(fetchResource(id))
+        }
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    getQueryVariable = (variable) => {
+        let query = window.location.search.substring(1);
+        const querypart = query.split('&');
+        for(let i=0; i<querypart.length; i++){;
+            let querypair = querypart[i].split('=');
+            if (querypair[0] === variable){return querypair[1]}
+        }
+        return (false);
+    }
+
+    render(){
         return(
-            <div className="container resource-page">
-                <Switch>
-                    <Route path='/resource/created' component={CreatedResourceWrapper} />
-                    <Route path='/resource/selected' component={SelectedResourceWrapper} />
-                </Switch>
+            <div className='resource-page'>
+                <ResourceWrapper />
             </div>
         )
     }
 }
+
+const mapStateToProps = state => ({
+    resource: state.resources.selection
+})
+
+export default connect(mapStateToProps)(ResourcePage)

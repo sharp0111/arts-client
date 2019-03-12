@@ -7,15 +7,16 @@ import LoginForm from '../UserForms/login-form';
 import MakeReservationForm from '../Reservations/make-reservation-form';
 
 export default class FormPage extends React.Component{
+
     render(){
 
         return(
             <div className="container form-page">
                 <Switch>
-                    <Route path='/form/resource' component={AddResourceWrapper} />
-                    <Route path='/form/register' component={RegistrationForm} />
-                    <Route path='/form/login' component={LoginForm} />
-                    <Route path='/form/reservation' component={MakeReservationForm} />
+                    <Route path={`${this.props.match.url}/resource`} component={AddResourceWrapper} />
+                    <Route path={`${this.props.match.url}/register`} component={RegistrationForm} />
+                    <Route path={`${this.props.match.url}/login`} component={LoginForm} />
+                    <Route path={`${this.props.match.url}/reservation`} component={MakeReservationForm} />
                 </Switch>
             </div>
         )

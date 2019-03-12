@@ -1,13 +1,40 @@
+.resource-page{
+    margin-top: 60px;
+}
+
+.search-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.display-results{
+    width: 100%;
+}
 
 .display-thumbnails{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.resource-thumbnail{
+    margin: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
+    -moz-box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
+    box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
 }
 
 .thumbnail-image{
+    overflow: hidden;
     position: relative;
-    height: 140px;
-    width: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 200px;
+    width: 300px;
     flex: auto;
     background-color: #E3EBED;
 }
@@ -16,6 +43,10 @@
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+.thumbnail-info{
+    padding: 5px 10px 5px 10px;
 }
 
 .pending-verification{
@@ -35,20 +66,86 @@
     font-size: 24px;
 }
 
-.resource-thumbnail{
-    margin: 20px;
-    width: 200px;
-}
-
 .category-symbol{
     height: 15px;
     width: 15px;
     border-radius: 50%;
     margin-right: 5px;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.18);
 }
 
 .category-display{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 5;
     display: flex;
     padding-top: 8px;
     padding-bottom: 5px;
+}
+
+.thumbnail-price{
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+.thumbnail-rate{
+    color: gray;
+    margin-bottom: 0;
+}
+
+.thumbnail-info h5{
+    color: #325680;
+    margin-bottom: 0;
+}
+
+.display-results .filter-form{
+    flex-direction: row;    
+}
+
+.input-wrapper{
+    flex: auto;
+}
+
+.input-wrapper label{
+    margin-bottom: -2px;
+    font-weight: bold;
+}
+
+.filter-form .input-wrapper:nth-of-type(2){
+    margin-left: 20px;
+}
+
+@media only screen and (min-width: 765px){
+
+    .display-results .filter-form{
+        flex-direction: column;    
+    }
+
+    .filter-form .input-wrapper:nth-of-type(2){
+        margin-left: 0;
+    }
+
+    .results-filter-section .filter-results{
+        max-width: 180px;
+    }
+
+    .display-results{
+        width: 700px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .display-results{
+        width: 1000px;
+     }
+}
+
+@media only screen and (min-width: 1500px){
+    .display-results{
+       width: 1400px;
+    }
 }
