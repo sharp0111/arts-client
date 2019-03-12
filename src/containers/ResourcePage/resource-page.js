@@ -27,7 +27,7 @@ export class ResourcePage extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className='resource-page'>
                 <ResourceWrapper />
             </div>
         )
