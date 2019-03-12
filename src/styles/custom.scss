@@ -28,8 +28,8 @@ $colors: (
     "dark":       #0F1617
   );
 
-  .navbar{
-    margin-bottom: 20px;
+  body{
+    background-color: #f7f9fc;
   }
 
   .add-resource-container{
@@ -82,16 +82,33 @@ $colors: (
     color: black;
   }
 
-  li a{
-    color: white;
-    margin-right: 20px;
-  }
 
   li a:hover{
     color: #f3e762;
     text-decoration: none;
   }
 
-  .navbar-nav{
-    flex-direction: row;
+  .form-button{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  button{
+    min-width: 120px;
+    height: 50px;
+    border-radius: 6px;
+    -webkit-box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
+    -moz-box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
+    box-shadow: -2px 2px 8px 0px rgba(179,179,179,0.49);
+    background-image: linear-gradient(#598e00, #3b5f00);
+    color: white;
+    font-weight: bold;
+  }
+
+
+  @media only screen and (min-width: 765px){
+
+    .form-button{
+      margin-top: 20px;
+    }
   }

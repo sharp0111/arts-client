@@ -43,12 +43,10 @@ export class MakeReservationWrapper extends React.Component{
         if(this.props.owner===true){
             return null;
         }
-        console.log(this.state.overlay)
         let cost;
         if(this.state.units!==null){
             cost=(this.props.resource.price_value*this.state.units/1000).toFixed(2)
         }
-        console.log(cost)
         let reserve = this.state.overlay?
             <div>
                 <Overlay 

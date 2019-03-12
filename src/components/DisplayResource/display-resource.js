@@ -8,6 +8,7 @@ import MakeReservationWrapper from '../../containers/Reservations/make-reservati
 
 export default function DisplayResource(props){
     console.log(props.verified)
+    console.log(props.reviews)
     return(
         <Grid>
         <Row>

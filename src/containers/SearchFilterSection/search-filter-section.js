@@ -21,6 +21,7 @@ export default class CategoryTypeSection extends React.Component {
     render(){
         return(
             <div className='filter-form'>
+                <div className='input-wrapper'>
                     <label>Category</label>
                     <Field
                         component={this.props.multi? MultiSelect: SelectInput}
@@ -31,6 +32,8 @@ export default class CategoryTypeSection extends React.Component {
                         onChange={this.props.handleCategory}
 
                     />
+                </div>
+                <div className='input-wrapper'>
                     <label>Type</label>
                     <Field  
                         component={SelectInput}
@@ -40,6 +43,7 @@ export default class CategoryTypeSection extends React.Component {
                         options={type}
                         onChange={this.props.handleType}
                     />
+                </div>
             </div>
         )
     }

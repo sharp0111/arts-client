@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchFilterSection from '../SearchFilterSection/search-filter-section';
+import Button from '../FormElements/button';
 import {reduxForm, FormSection} from 'redux-form';
 
 class FilterResults extends React.Component{
@@ -19,7 +20,12 @@ class FilterResults extends React.Component{
                 <SearchFilterSection 
                     {...this.props}
                 />
-                <button onClick={this.props.onClick}>Clear Filters</button>
+                <Button 
+                    onClick={this.props.onClick}
+                    label='Clear Filters'
+                    className='form-button'
+                    type='button'
+                />
             </FormSection>
             </div>
         )

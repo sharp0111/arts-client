@@ -35,6 +35,7 @@ export default class Input extends React.Component {
                     min={0}
                     max={this.props.max}
                     onChange={(value) => this.props.input.onChange(value)}
+                    className={this.props.className}
                 />
             </div>
         );
